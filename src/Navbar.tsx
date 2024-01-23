@@ -28,7 +28,7 @@ const Navbar: React.FC<NavbarProps> = (props) => {
             <FontAwesomeIcon icon={faMoon} />
           ) : (
             <FontAwesomeIcon icon={faSun} />
-          )}{" "}
+          )}
         </Icon>
       </div>
     </Nav>
@@ -38,6 +38,8 @@ const Navbar: React.FC<NavbarProps> = (props) => {
 export default Navbar;
 
 const Nav = styled.nav`
+  position: fixed;
+  top: 0;
   background-color: ${(props) => props.theme.componentsBackground};
   color: ${(props) => props.theme.color};
   display: flex;
@@ -46,7 +48,8 @@ const Nav = styled.nav`
   height: 5.6rem;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid ${(props) => props.theme.pageBackground};
+  border-bottom: 3px solid ${(props) => props.theme.pageBackground};
+  z-index: 1;
   transition: background-color 1s, color 1s, border 1s;
 `;
 
@@ -55,6 +58,7 @@ const Title = styled.h1`
   bottom: 0.1rem;
   margin-left: 2rem;
   font-size: 1.75rem;
+  font-family: "Inter", sans-serif;
 `;
 
 const Button = styled.button`

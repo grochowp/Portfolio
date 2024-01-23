@@ -9,6 +9,9 @@ export default AboutMe;
 
 const Section = styled.section`
   background-color: ${(props) => props.theme.pageBackground};
-  height: 86vh;
+  height: 90vh;
+  min-height: 700px;
   transition: 1s;
+  max-width: 2440px;
+  margin: auto;
 `;
