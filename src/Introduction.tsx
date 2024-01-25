@@ -1,15 +1,16 @@
-import { faCircleDown } from "@fortawesome/free-regular-svg-icons";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import styled from "styled-components";
 
 const Introduction: React.FC = () => {
-  const moveUser = () => {
-    const sectionHeight = window.innerHeight;
+  const moveUser = (): void => {
+    const sectionHeight: number = window.innerHeight;
 
-    const currentIndex = Math.floor(window.scrollY / sectionHeight);
+    const currentIndex: number = Math.floor(window.scrollY / sectionHeight);
 
-    const targetScrollPosition = (currentIndex + 1) * sectionHeight - 100;
+    const targetScrollPosition: number =
+      (currentIndex + 1) * sectionHeight - 100;
 
     window.scrollTo({
       top: targetScrollPosition,
@@ -32,7 +33,7 @@ const Introduction: React.FC = () => {
         </Intro>
 
         <MoveDown onClick={moveUser}>
-          <FontAwesomeIcon icon={faCircleDown} />
+          <FontAwesomeIcon icon={faChevronDown} />
         </MoveDown>
       </Section>
     </>
