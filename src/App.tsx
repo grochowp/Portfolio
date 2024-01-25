@@ -5,6 +5,7 @@ import { ThemeProvider } from "styled-components";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./Home";
 import Footer from "./Footer";
+import GlobalStyle from "./globalStyles";
 
 interface Theme {
   bodyColor: string;
@@ -52,6 +53,7 @@ function App() {
 
   return (
     <ThemeProvider theme={themes[theme]}>
+      <GlobalStyle />
       <Navbar theme={theme} setTheme={setTheme} />
       <BrowserRouter>
         <Routes>

@@ -63,20 +63,21 @@ const Section = styled.section`
   display: flex;
   justify-content: space-around;
   border-radius: 10px;
+  gap: 1rem;
 
   @media (max-width: 900px) {
+    background-color: transparent;
     height: max-content;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 3rem;
+    gap: 1rem;
   }
 `;
 
 const Article = styled.article`
   width: 100%;
-  height: max-content;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -86,7 +87,7 @@ const Article = styled.article`
   &::before {
     content: "";
     position: absolute;
-    top: 40%;
+    top: 35%;
     left: 100%;
     height: 30%;
     width: 1px;
@@ -98,20 +99,18 @@ const Article = styled.article`
   }
 
   @media (max-width: 900px) {
+    background-color: ${(props) => props.theme.componentsBackground};
+    border-radius: 10px;
+
     &::before {
-      content: "";
-      position: absolute;
-      top: 110%;
-      left: 35%;
-      height: 1px;
-      width: 30%;
+      content: none;
     }
   }
 `;
 
 const Title = styled.h1`
   font-family: "Istok Web", sans-serif;
-  font-size: 1.8rem;
+  font-size: 1.75rem;
 
   margin: 3rem 1rem 2.5rem 1rem;
   color: ${(props) => props.theme.color};
