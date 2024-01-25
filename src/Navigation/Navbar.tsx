@@ -68,6 +68,10 @@ const Title = styled.h1`
   margin-left: 2rem;
   font-size: 1.75rem;
   font-family: "Inter", sans-serif;
+  transition: 1s;
+  @media (max-width: 500px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const Button = styled.button`

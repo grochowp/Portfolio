@@ -32,6 +32,7 @@ interface StyledIconWrapperProps {
 }
 
 const IconWrapper = styled.div<StyledIconWrapperProps>`
+  transition: 1s;
   margin: 1rem 2.5rem;
   display: flex;
   margin-bottom: 1rem;

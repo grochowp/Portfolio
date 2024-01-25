@@ -112,6 +112,7 @@ const Title = styled.h1`
   font-family: "Istok Web", sans-serif;
   font-size: 1.75rem;
 
+  text-align: center;
   margin: 3rem 1rem 2.5rem 1rem;
   color: ${(props) => props.theme.color};
 `;
@@ -123,6 +124,10 @@ const Technologies = styled.div`
   display: flex;
   color: ${(props) => props.theme.color};
   flex-wrap: wrap;
+
+  @media (max-width: 900px) {
+    width: 100%;
+  }
 `;
 
 const Instruction = styled.h6`

@@ -11,11 +11,6 @@ body {
 
   ::-webkit-scrollbar {
     width: 4px; 
-
-    @media (max-width: 450px) {
-      min-width: 20rem;
-      height: max-content;
-    }
   }
   
   ::-webkit-scrollbar-thumb {

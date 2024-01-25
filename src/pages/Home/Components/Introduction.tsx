@@ -25,8 +25,8 @@ const Introduction: React.FC = () => {
         <Intro>
           <Title>Front-end React Developer</Title>
           <Description>
-            Hello, i`m Patryk Grochowski aspiring front-end React Developer from
-            Warsaw in Poland
+            Hello, i`m Patryk Grochowski, aspiring front-end React Developer
+            from Warsaw in Poland
           </Description>
 
           <Button>Contact me</Button>
@@ -57,7 +57,7 @@ const Section = styled.section`
   position: relative;
   flex-wrap: wrap;
 
-  @media (max-width: 450px) {
+  @media (max-width: 500px) {
     min-height: 0;
   }
 `;
@@ -73,32 +73,46 @@ const Image = styled.div`
   max-width: 45rem;
   background-color: red;
   margin: 2rem;
+transition:1s;
+  @media (min-width: 501px) and (max-width: 1200px) {
+    margin: 2rem 0 -2rem 0;
+    width: 28rem;
+    height: 40vw;
+    max-height: 30rem;
+    min-height: 20rem;
+  }
 
   @media (max-width: 500px) {
     margin: 2rem 0 -2rem; 0;
     min-width: 18rem;
     width: 80vw;
-    height: 25vh;
+    height: 30vh;
     max-height: 15rem;
   }
+ 
 `;
 
 const Intro = styled.div`
   color: ${(props) => props.theme.color};
-  height: 30rem;
+  height: max-content;
   width: 33vw;
   min-width: 30rem;
   max-width: 40rem;
   margin: 3rem;
 
+  @media (max-width: 1200px) {
+    min-width: 28rem;
+    max-width: 28rem;
+    width: 50vw;
+  }
+
   @media (max-width: 500px) {
-    min-width: 20rem;
-    height: max-content;
     margin: 1rem;
     min-width: 18rem;
     width: 80vw;
   }
 `;
+
 const Button = styled.button`
   background-color: ${(props) => props.theme.componentsBackground};
   color: ${(props) => props.theme.color};
@@ -113,7 +127,7 @@ const Button = styled.button`
   position: relative;
   float: right;
   right: 1rem;
-  top: 5rem;
+  // top: 5rem;
   transition: 1s;
 
   &:hover {
@@ -139,9 +153,9 @@ const Title = styled.h1`
   margin: 0;
   font-family: "Inika", serif;
   font-weight: 200;
-
+  transition: 1s;
   @media (max-width: 500px) {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 `;
 
@@ -149,7 +163,7 @@ const Description = styled.h3`
   font-family: "Istok Web", sans-serif;
   font-weight: 100;
   font-size: 1.3rem;
-
+  transition: 1s;
   @media (max-width: 500px) {
     font-size: 1rem;
   }
@@ -167,7 +181,7 @@ const MoveDown = styled.span`
   color: ${(props) => props.theme.color};
   cursor: pointer;
 
-  @media (max-width: 1217px) {
+  @media (max-width: 1071px) {
     display: none;
   }
 `;
