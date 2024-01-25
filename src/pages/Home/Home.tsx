@@ -1,7 +1,7 @@
 import React from "react";
-import Introduction from "./Introduction";
-import Skills from "./Skills";
-import AboutMe from "./AboutMe";
+import Introduction from "./Components/Introduction";
+import Skills from "./Components/Skills";
+import AboutMe from "./Components/AboutMe";
 
 const Home: React.FC = () => {
   return (

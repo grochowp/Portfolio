@@ -5,6 +5,8 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    transition:1s;
+    background-color: ${(props) => props.theme.componentsBackground}
   }
 
   ::-webkit-scrollbar {

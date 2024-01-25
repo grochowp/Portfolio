@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
-import Navbar from "./Navigation/Navbar";
+import { useState } from "react";
+import Navbar from "../Navigation/Navbar";
 import { ThemeProvider } from "styled-components";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./Home";
+import Home from "../pages/Home/Home";
 import Footer from "./Footer";
-import GlobalStyle from "./globalStyles";
+import GlobalStyle from "../styles/globalStyles";
 
 interface Theme {
   bodyColor: string;
@@ -41,15 +41,6 @@ const themes: Record<string, Theme> = {
 
 function App() {
   const [theme, setTheme] = useState("light");
-
-  useEffect(() => {
-    const body = document.body;
-    body.style.backgroundColor = themes[theme].componentsBackground;
-
-    return () => {
-      body.style.backgroundColor = "";
-    };
-  }, [theme]);
 
   return (
     <ThemeProvider theme={themes[theme]}>

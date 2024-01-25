@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import styled from "styled-components";
 import Burger from "./Components/Burger";
-import Icon from "../ChangeTheme";
+import Icon from "./Components/ChangeTheme";
 
 interface NavbarProps {
   theme: string;
@@ -87,6 +87,10 @@ const Button = styled.button`
 
   @media (max-width: 900px) {
     display: none;
+  }
+
+  &:nth-child(3) {
+    margin-right: 5rem;
   }
 `;
 

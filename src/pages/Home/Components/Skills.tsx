@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Icon from "./IconWrapper";
-import { SkillsKnow, SkillsLearn } from "./utils";
+import { SkillsKnow, SkillsLearn } from "../../../services/utils";
 
 const Skills: React.FC = () => {
   return (
@@ -57,7 +57,7 @@ const Section = styled.section`
   height: max-content;
   min-height: 20rem;
   transition: 1s;
-  width: 95%;
+  width: 96%;
   max-width: 1920px;
   margin: auto;
   display: flex;
@@ -88,7 +88,7 @@ const Article = styled.article`
     content: "";
     position: absolute;
     top: 35%;
-    left: 100%;
+    left: 101%;
     height: 30%;
     width: 1px;
     background-color: ${(props) => props.theme.color};

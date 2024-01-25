@@ -14,6 +14,7 @@ const StyledBurger = styled.div<StyledBurgerProps>`
   right: 25px;
   z-index: 20;
   display: none;
+  cursor: pointer;
 
   @media (max-width: 900px) {
     display: flex;
