@@ -81,7 +81,7 @@ const Article = styled.article`
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  transition: 1s;
   position: relative;
 
   &::before {

@@ -2,6 +2,8 @@ import { faSun, faMoon } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import styled from "styled-components";
+import Burger from "./Components/Burger";
+import Icon from "../ChangeTheme";
 
 interface NavbarProps {
   theme: string;
@@ -23,7 +25,14 @@ const Navbar: React.FC<NavbarProps> = (props) => {
         <Button type="button">Projects</Button>
         <Button type="button">Contact</Button>
 
-        <Icon onClick={toggleTheme}>
+        <Burger toggleTheme={toggleTheme} theme={props.theme} />
+
+        <Icon
+          onClick={() => toggleTheme()}
+          top="0.4rem"
+          right="3rem"
+          display="none"
+        >
           {props.theme === "light" ? (
             <FontAwesomeIcon icon={faMoon} />
           ) : (
@@ -39,6 +48,7 @@ export default Navbar;
 
 const Nav = styled.nav`
   position: fixed;
+
   top: 0;
   background-color: ${(props) => props.theme.componentsBackground};
   color: ${(props) => props.theme.color};
@@ -74,13 +84,10 @@ const Button = styled.button`
   &:hover {
     color: ${(props) => props.theme.colorOnHover};
   }
+
+  @media (max-width: 900px) {
+    display: none;
+  }
 `;
 
-const Icon = styled.span`
-  position: relative;
-  top: 0.4rem;
-  font-size: 2.25rem;
-  margin-left: ${(props) => (props.theme.name === "light" ? "59px" : "50px")};
-  margin-right: 3rem;
-  cursor: pointer;
-`;
+// const Menu = styled.

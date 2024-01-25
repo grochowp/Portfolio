@@ -57,8 +57,8 @@ const Section = styled.section`
   position: relative;
   flex-wrap: wrap;
 
-  @media (max-width: 768px) {
-    // background-color: red;
+  @media (max-width: 450px) {
+    min-height: 0;
   }
 `;
 
@@ -68,11 +68,19 @@ const Image = styled.div`
   background-size: cover;
   background-position: center;
   height: 30rem;
-  width: 33vw;
+  width: 30vw;
   min-width: 30rem;
   max-width: 45rem;
   background-color: red;
   margin: 2rem;
+
+  @media (max-width: 500px) {
+    margin: 2rem 0 -2rem; 0;
+    min-width: 18rem;
+    width: 80vw;
+    height: 25vh;
+    max-height: 15rem;
+  }
 `;
 
 const Intro = styled.div`
@@ -81,7 +89,15 @@ const Intro = styled.div`
   width: 33vw;
   min-width: 30rem;
   max-width: 40rem;
-  margin: 2rem;
+  margin: 3rem;
+
+  @media (max-width: 500px) {
+    min-width: 20rem;
+    height: max-content;
+    margin: 1rem;
+    min-width: 18rem;
+    width: 80vw;
+  }
 `;
 const Button = styled.button`
   background-color: ${(props) => props.theme.componentsBackground};
@@ -95,29 +111,48 @@ const Button = styled.button`
   border-radius: 10px;
   cursor: pointer;
   position: relative;
-  left: 20rem;
+  float: right;
+  right: 1rem;
   top: 5rem;
   transition: 1s;
 
   &:hover {
     top: 4.5rem;
-    left: 20.5rem;
-    box-shadow: -4px 4px 8px ${(props) => props.theme.bodyColor};
+    box-shadow: 0 4px 8px ${(props) => props.theme.bodyColor};
+  }
+
+  @media (max-width: 500px) {
+    width: 10rem;
+    height: 3rem;
+    top: 1rem;
+    margin-bottom: 2rem;
+
+    &:hover {
+      top: 1rem;
+      box-shadow: none;
+    }
   }
 `;
 
 const Title = styled.h1`
   font-size: 4rem;
-
   margin: 0;
   font-family: "Inika", serif;
   font-weight: 200;
+
+  @media (max-width: 500px) {
+    font-size: 2rem;
+  }
 `;
 
 const Description = styled.h3`
   font-family: "Istok Web", sans-serif;
   font-weight: 100;
   font-size: 1.3rem;
+
+  @media (max-width: 500px) {
+    font-size: 1rem;
+  }
 `;
 
 const MoveDown = styled.span`
