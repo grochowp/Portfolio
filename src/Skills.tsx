@@ -12,15 +12,27 @@ const Skills: React.FC = () => {
 
           <Technologies>
             {SkillsKnow.map((skill) => (
-              <Icon key={skill.path} path={skill.path} alt={skill.alt} />
+              <Icon
+                key={skill.path}
+                path={skill.path}
+                alt={skill.alt}
+                haveProjects={skill.haveProjects}
+              />
             ))}
           </Technologies>
+
+          <Instruction>Click on icon to go to projects</Instruction>
         </Article>
         <Article>
           <Title>Technologies I want to learn</Title>
           <Technologies>
             {SkillsLearn.map((skill) => (
-              <Icon key={skill.path} path={skill.path} alt={skill.alt} />
+              <Icon
+                key={skill.path}
+                path={skill.path}
+                alt={skill.alt}
+                haveProjects={skill.haveProjects}
+              />
             ))}
           </Technologies>
         </Article>
@@ -89,11 +101,10 @@ const Article = styled.article`
     &::before {
       content: "";
       position: absolute;
-      top: 115%;
+      top: 110%;
       left: 35%;
       height: 1px;
       width: 30%;
-      background-color: #ccc;
     }
   }
 `;
@@ -113,4 +124,11 @@ const Technologies = styled.div`
   display: flex;
   color: ${(props) => props.theme.color};
   flex-wrap: wrap;
+`;
+
+const Instruction = styled.h6`
+  color: ${(props) => props.theme.color};
+  font-family: "Istok Web", sans-serif;
+  font-weight: 100;
+  margin: 1rem 0 1rem 0;
 `;

@@ -4,23 +4,38 @@ import styled from "styled-components";
 interface IconWrapperProps {
   path: string;
   alt: string;
+  haveProjects: boolean;
 }
 
 const Icon: React.FC<IconWrapperProps> = (props) => {
+  const MoveToProjects = (path: string) => {
+    console.log(path);
+  };
+
   return (
-    <IconWrapper>
-      <img src={`./Images/${props.path}.png`} alt={props.alt} />
+    <IconWrapper projects={props.haveProjects.toString()}>
+      <img
+        onClick={
+          props.haveProjects ? () => MoveToProjects(props.path) : undefined
+        }
+        src={`./Images/${props.path}.png`}
+        alt={props.alt}
+      />
     </IconWrapper>
   );
 };
 
 export default Icon;
 
-const IconWrapper = styled.div`
-  width: 8rem;
-  height: 4rem;
+interface StyledIconWrapperProps {
+  projects: string;
+}
+
+const IconWrapper = styled.div<StyledIconWrapperProps>`
+  margin: 1rem 2.5rem;
   display: flex;
   margin-bottom: 1rem;
   justify-content: center;
   align-items: center;
+  cursor: ${(props) => (props.projects === "true" ? "pointer" : "default")};
 `;
