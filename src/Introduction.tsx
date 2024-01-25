@@ -43,15 +43,22 @@ export default Introduction;
 
 const Section = styled.section`
   background-color: ${(props) => props.theme.pageBackground};
-  height: 100vh;
-  min-height: 960px;
+  height: max-content;
+  min-height: calc(100vh - 5.6rem);
   transition: 1s;
   max-width: 2440px;
   margin: auto;
+  margin-top: 5.6rem;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 3rem;
   align-items: center;
   position: relative;
+  flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    // background-color: red;
+  }
 `;
 
 const Image = styled.div`
@@ -60,18 +67,21 @@ const Image = styled.div`
   background-size: cover;
   background-position: center;
   height: 30rem;
-  width: 40rem;
-  margin-left: 5rem;
+  width: 33vw;
+  min-width: 30rem;
+  max-width: 45rem;
   background-color: red;
+  margin: 2rem;
 `;
 
 const Intro = styled.div`
   color: ${(props) => props.theme.color};
-  height: 28rem;
-  width: 40rem;
-  margin-right: 5rem;
+  height: 30rem;
+  width: 33vw;
+  min-width: 30rem;
+  max-width: 40rem;
+  margin: 2rem;
 `;
-
 const Button = styled.button`
   background-color: ${(props) => props.theme.componentsBackground};
   color: ${(props) => props.theme.color};
@@ -97,8 +107,10 @@ const Button = styled.button`
 
 const Title = styled.h1`
   font-size: 4rem;
+
   margin: 0;
   font-family: "Inika", serif;
+  font-weight: 200;
 `;
 
 const Description = styled.h3`
@@ -109,8 +121,8 @@ const Description = styled.h3`
 
 const MoveDown = styled.span`
   position: absolute;
-  top: 92.5%;
-  left: 49%;
+  top: 90.5%;
+  left: 48.8%;
   height: 3rem;
   width: 3rem;
   font-size: 3rem;
@@ -118,4 +130,8 @@ const MoveDown = styled.span`
   border: none;
   color: ${(props) => props.theme.color};
   cursor: pointer;
+
+  @media (max-width: 1217px) {
+    display: none;
+  }
 `;

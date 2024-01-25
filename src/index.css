@@ -6,6 +6,7 @@ body {
   margin: 0;
   padding: 0;
   transition: 1s;
+  overflow-x: hidden;
 }
 html,
 body {

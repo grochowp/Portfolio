@@ -43,7 +43,6 @@ const Nav = styled.nav`
   background-color: ${(props) => props.theme.componentsBackground};
   color: ${(props) => props.theme.color};
   display: flex;
-  position: fixed;
   width: 100vw;
   height: 5.6rem;
   justify-content: space-between;
