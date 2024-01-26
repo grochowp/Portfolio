@@ -22,7 +22,7 @@ const StyledIcon = styled.span<IconProps>`
   }
 `;
 
-const Icon: React.FC<IconProps> = ({
+const ChangeThemeIcon: React.FC<IconProps> = ({
   top,
   right,
   display,
@@ -36,4 +36,4 @@ const Icon: React.FC<IconProps> = ({
   );
 };
 
-export default Icon;
+export default ChangeThemeIcon;

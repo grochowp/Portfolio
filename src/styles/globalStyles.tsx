@@ -2,6 +2,7 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 body {
+  min-width: 320px;
     margin: 0;
     padding: 0;
     overflow-x: hidden;

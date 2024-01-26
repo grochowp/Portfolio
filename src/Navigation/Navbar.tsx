@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import styled from "styled-components";
 import Burger from "./Components/Burger";
-import Icon from "./Components/ChangeTheme";
+import ChangeThemeIcon from "./Components/ChangeTheme";
 
 interface NavbarProps {
   theme: string;
@@ -27,7 +27,7 @@ const Navbar: React.FC<NavbarProps> = (props) => {
 
         <Burger toggleTheme={toggleTheme} theme={props.theme} />
 
-        <Icon
+        <ChangeThemeIcon
           onClick={() => toggleTheme()}
           top="0.4rem"
           right="3rem"
@@ -38,7 +38,7 @@ const Navbar: React.FC<NavbarProps> = (props) => {
           ) : (
             <FontAwesomeIcon icon={faSun} />
           )}
-        </Icon>
+        </ChangeThemeIcon>
       </div>
     </Nav>
   );

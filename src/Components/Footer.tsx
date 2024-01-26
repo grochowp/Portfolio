@@ -57,6 +57,10 @@ const Rights = styled.p`
   padding: 1rem;
   color: ${(props) => props.theme.color};
   transition: 1s;
+
+  @media (max-width: 500px) {
+    font-size: 0.75rem;
+  }
 `;
 
 const Icon = styled.a`
@@ -67,4 +71,8 @@ const Icon = styled.a`
   color: ${(props) => props.theme.color};
   transition: 1s;
   cursor: pointer;
+
+  @media (max-width: 500px) {
+    font-size: 1.5rem;
+  }
 `;

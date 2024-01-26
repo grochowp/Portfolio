@@ -1,17 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 import Icon from "./IconWrapper";
-import { SkillsKnow, SkillsLearn } from "../../../services/utils";
+import { SKILLS_KNOW, SKILLS_LEARN } from "../../../services/utils";
 
 const Skills: React.FC = () => {
   return (
     <Container>
       <Section>
-        <Article>
-          <Title>Technologies I`ve used</Title>
+        <article>
+          <h1>Technologies I`ve used</h1>
 
           <Technologies>
-            {SkillsKnow.map((skill) => (
+            {SKILLS_KNOW.map((skill) => (
               <Icon
                 key={skill.path}
                 path={skill.path}
@@ -22,11 +22,11 @@ const Skills: React.FC = () => {
           </Technologies>
 
           <Instruction>Click on icon to go to projects</Instruction>
-        </Article>
-        <Article>
-          <Title>Technologies I want to learn</Title>
+        </article>
+        <article>
+          <h1>Technologies I want to learn</h1>
           <Technologies>
-            {SkillsLearn.map((skill) => (
+            {SKILLS_LEARN.map((skill) => (
               <Icon
                 key={skill.path}
                 path={skill.path}
@@ -35,7 +35,7 @@ const Skills: React.FC = () => {
               />
             ))}
           </Technologies>
-        </Article>
+        </article>
       </Section>
     </Container>
   );
@@ -74,47 +74,51 @@ const Section = styled.section`
     align-items: center;
     gap: 1rem;
   }
-`;
 
-const Article = styled.article`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: 1s;
-  position: relative;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 35%;
-    left: 101%;
-    height: 30%;
-    width: 1px;
-    background-color: ${(props) => props.theme.color};
-  }
-
-  &:not(:first-child)::before {
-    display: none;
-  }
-
-  @media (max-width: 900px) {
-    background-color: ${(props) => props.theme.componentsBackground};
-    border-radius: 10px;
+  article {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 1s;
+    position: relative;
 
     &::before {
-      content: none;
+      content: "";
+      position: absolute;
+      top: 35%;
+      left: 101%;
+      height: 30%;
+      width: 1px;
+      background-color: ${(props) => props.theme.color};
+    }
+
+    &:not(:first-child)::before {
+      display: none;
+    }
+
+    @media (max-width: 900px) {
+      background-color: ${(props) => props.theme.componentsBackground};
+      border-radius: 10px;
+
+      &::before {
+        content: none;
+      }
     }
   }
-`;
 
-const Title = styled.h1`
-  font-family: "Istok Web", sans-serif;
-  font-size: 1.75rem;
 
-  text-align: center;
-  margin: 3rem 1rem 2.5rem 1rem;
-  color: ${(props) => props.theme.color};
+  h1{
+    font-family: "Istok Web", sans-serif;
+    font-size: 1.75rem;
+
+    text-align: center;
+    margin: 3rem 1rem 2.5rem 1rem;
+    color: ${(props) => props.theme.color};
+
+    @media (max-width: 900px) {
+      margin: 2rem 0 1rem 0;
+  }
 `;
 
 const Technologies = styled.div`

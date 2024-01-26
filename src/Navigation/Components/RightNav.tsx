@@ -26,7 +26,7 @@ const RightNav: React.FC<RightNavProps> = (props) => {
       </Icon>
       <div
         style={{
-          marginTop: "10rem",
+          marginTop: "5rem",
         }}
       >
         <Button>Home</Button>
@@ -40,7 +40,7 @@ const RightNav: React.FC<RightNavProps> = (props) => {
 export default RightNav;
 
 const Ul = styled.ul<UlProps>`
-  transition:1s;
+  transition: 1s;
   list-style: none;
   flex-flow: row nowrap;
   display: none;
@@ -56,8 +56,6 @@ const Ul = styled.ul<UlProps>`
     right: 0;
     height: 100vh;
     width: 200px;
-    width: 30%
-    padding-top: 3.5rem;
   }
 `;
 
@@ -69,8 +67,10 @@ const Button = styled.button`
   height: 3rem;
   width: 80%;
   transition: 1s;
-  background-color: ${(props) => props.theme.componentsBackground};
+  background: none;
+  // background-color: ${(props) => props.theme.componentsBackground};
   color: ${(props) => props.theme.color};
-  border: 1px solid ${(props) => props.theme.color};
+  // border: 1px solid ${(props) => props.theme.color};
   border-radius: 10px;
+  border: none;
 `;

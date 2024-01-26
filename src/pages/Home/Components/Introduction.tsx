@@ -23,18 +23,18 @@ const Introduction: React.FC = () => {
       <Section>
         <Image />
         <Intro>
-          <Title>Front-end React Developer</Title>
-          <Description>
+          <h1>Front-end React Developer</h1>
+          <h3>
             Hello, i`m Patryk Grochowski, aspiring front-end React Developer
             from Warsaw in Poland
-          </Description>
+          </h3>
 
-          <Button>Contact me</Button>
+          <button>Contact me</button>
         </Intro>
 
-        <MoveDown onClick={moveUser}>
+        <span onClick={moveUser}>
           <FontAwesomeIcon icon={faChevronDown} />
-        </MoveDown>
+        </span>
       </Section>
     </>
   );
@@ -44,8 +44,9 @@ export default Introduction;
 
 const Section = styled.section`
   background-color: ${(props) => props.theme.pageBackground};
-  height: max-content;
-  min-height: calc(100vh - 5.6rem);
+  height: calc(100vh - 5.6rem);
+
+  max-height: 88rem;
   transition: 1s;
   max-width: 2440px;
   margin: auto;
@@ -60,6 +61,23 @@ const Section = styled.section`
   @media (max-width: 500px) {
     min-height: 0;
   }
+
+  span {
+    position: absolute;
+    top: 90.5%;
+    left: 48.8%;
+    height: 3rem;
+    width: 3rem;
+    font-size: 3rem;
+    background: transparent;
+    border: none;
+    color: ${(props) => props.theme.color};
+    cursor: pointer;
+
+    @media (max-width: 1071px) {
+      display: none;
+    }
+  }
 `;
 
 const Image = styled.div`
@@ -68,12 +86,13 @@ const Image = styled.div`
   background-size: cover;
   background-position: center;
   height: 30rem;
-  width: 30vw;
+  width: 33vw;
   min-width: 30rem;
   max-width: 45rem;
   background-color: red;
   margin: 2rem;
-transition:1s;
+  transition:1s;
+  
   @media (min-width: 501px) and (max-width: 1200px) {
     margin: 2rem 0 -2rem 0;
     width: 28rem;
@@ -111,77 +130,61 @@ const Intro = styled.div`
     min-width: 18rem;
     width: 80vw;
   }
-`;
 
-const Button = styled.button`
-  background-color: ${(props) => props.theme.componentsBackground};
-  color: ${(props) => props.theme.color};
-  font-size: 1.5rem;
-  font-family: "Inter", serif;
-  font-weight: 600;
-  width: 13rem;
-  height: 4rem;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  position: relative;
-  float: right;
-  right: 1rem;
-  // top: 5rem;
-  transition: 1s;
+  h1 {
+    font-size: 4rem;
+    margin: -4rem 0 1rem 0;
+    font-family: "Inika", serif;
+    font-weight: 200;
+    transition: 1s;
 
-  &:hover {
-    top: 4.5rem;
-    box-shadow: 0 4px 8px ${(props) => props.theme.bodyColor};
-  }
-
-  @media (max-width: 500px) {
-    width: 10rem;
-    height: 3rem;
-    top: 1rem;
-    margin-bottom: 2rem;
-
-    &:hover {
-      top: 1rem;
-      box-shadow: none;
+    @media (max-width: 500px) {
+      font-size: 2.5rem;
     }
   }
-`;
 
-const Title = styled.h1`
-  font-size: 4rem;
-  margin: 0;
-  font-family: "Inika", serif;
-  font-weight: 200;
-  transition: 1s;
-  @media (max-width: 500px) {
-    font-size: 2.5rem;
+  h3 {
+    font-family: "Istok Web", sans-serif;
+    font-weight: 100;
+    font-size: 1.3rem;
+    transition: 1s;
+
+    @media (max-width: 500px) {
+      font-size: 1rem;
+    }
   }
-`;
 
-const Description = styled.h3`
-  font-family: "Istok Web", sans-serif;
-  font-weight: 100;
-  font-size: 1.3rem;
-  transition: 1s;
-  @media (max-width: 500px) {
-    font-size: 1rem;
-  }
-`;
+  button {
+    background-color: ${(props) => props.theme.componentsBackground};
+    color: ${(props) => props.theme.color};
+     font: 600 1.5rem "Inter", serif;
+     width: 13rem;
+    height: 4rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    float: right;
+    right: 1rem;
+    top: 0rem;
+    transition: 1s;
+    margin-top: 2rem;
 
-const MoveDown = styled.span`
-  position: absolute;
-  top: 90.5%;
-  left: 48.8%;
-  height: 3rem;
-  width: 3rem;
-  font-size: 3rem;
-  background: transparent;
-  border: none;
-  color: ${(props) => props.theme.color};
-  cursor: pointer;
+    &:hover {
+      top: -0.3rem;
+      box-shadow: 0 4px 8px ${(props) => props.theme.bodyColor};
+    }
 
-  @media (max-width: 1071px) {
-    display: none;
-  }
+    @media (max-width: 500px) {
+      margin-top: 0;
+      width: 10rem;
+      height: 3rem;
+      top: 1rem;
+      margin-bottom: 2rem;
+
+      &:hover {
+        top: 1rem;
+        box-shadow: none;
+      }
+    }
 `;
