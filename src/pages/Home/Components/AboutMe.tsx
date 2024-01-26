@@ -36,9 +36,9 @@ const AboutMe: React.FC = () => {
         </Details>
       </article>
       <Photos>
-        <div />
-        <div />
-        <div />
+        <img src="../images/ja.png" alt="Opis obrazu" />
+        <img src="../images/ja.png" alt="Opis obrazu" />
+        <img src="../images/ja.png" alt="Opis obrazu" />
       </Photos>
     </Section>
   );
@@ -179,20 +179,23 @@ const Details = styled.div`
 `;
 
 const Photos = styled.article`
-  div {
-    background-image: url("../images/ja.png");
-    background-size: cover;
+  img {
+    // background-image: url("../images/ja.png");
+    // background-size: cover;
 
     &:first-child {
-      background-position: left;
+      object-fit: cover;
+      object-position: left;
     }
 
     &:nth-child(2) {
-      background-position: center;
+      object-fit: cover;
+      object-position: center;
     }
 
     &:last-child {
-      background-position: right;
+      object-fit: cover;
+      object-position: right;
     }
     margin: 0 1%;
     width: 33%;
@@ -211,7 +214,7 @@ const Photos = styled.article`
   }
 
   @media (max-width: 1200px) {
-    div {
+    img {
       filter: none;
       height: 50vw;
       max-height: 20rem;
@@ -219,17 +222,17 @@ const Photos = styled.article`
 
       width: 33%;
       &:first-child {
-        background-position: center;
+        object-position: center;
         margin: 2rem 0.5rem 0 0;
       }
 
       &:nth-child(2) {
-        background-position: center;
+        object-position: center;
         margin: 2rem 0.5rem 0 0;
       }
 
       &:last-child {
-        background-position: center;
+        object-position: center;
         margin: 2rem 0rem 0 0;
       }
 

@@ -4,6 +4,7 @@ import React from "react";
 import styled from "styled-components";
 import Burger from "./Components/Burger";
 import ChangeThemeIcon from "./Components/ChangeTheme";
+import { Link } from "react-router-dom";
 
 interface NavbarProps {
   theme: string;
@@ -21,9 +22,19 @@ const Navbar: React.FC<NavbarProps> = (props) => {
         <Title>{"<grochowp.dev />"}</Title>
       </div>
       <div>
-        <Button type="button">Home</Button>
-        <Button type="button">Projects</Button>
-        <Button type="button">Contact</Button>
+        <Link to="/">
+          <Button type="button">Home</Button>
+        </Link>
+
+        <Link to="/projects">
+          <Button type="button">Projects</Button>
+        </Link>
+
+        <Link to="/contact">
+          <Button type="button" style={{ marginRight: "5rem" }}>
+            Contact
+          </Button>
+        </Link>
 
         <Burger toggleTheme={toggleTheme} theme={props.theme} />
 
@@ -91,10 +102,6 @@ const Button = styled.button`
 
   @media (max-width: 900px) {
     display: none;
-  }
-
-  &:nth-child(3) {
-    margin-right: 5rem;
   }
 `;
 

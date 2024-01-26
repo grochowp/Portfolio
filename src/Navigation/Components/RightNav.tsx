@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Icon from "./ChangeTheme";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon, faSun } from "@fortawesome/free-regular-svg-icons";
+import { Link } from "react-router-dom";
 
 interface UlProps {
   open: boolean;
@@ -29,9 +30,19 @@ const RightNav: React.FC<RightNavProps> = (props) => {
           marginTop: "5rem",
         }}
       >
-        <Button>Home</Button>
-        <Button>Projects</Button>
-        <Button>Contact</Button>
+        <Link to="/">
+          <Button type="button">Home</Button>
+        </Link>
+
+        <Link to="/projects">
+          <Button type="button">Projects</Button>
+        </Link>
+
+        <Link to="/contact">
+          <Button type="button" style={{ marginRight: "5rem" }}>
+            Contact
+          </Button>
+        </Link>
       </div>
     </Ul>
   );

@@ -40,13 +40,13 @@ const themes: Record<string, Theme> = {
 };
 
 function App() {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("dark");
 
   return (
     <ThemeProvider theme={themes[theme]}>
       <GlobalStyle />
-      <Navbar theme={theme} setTheme={setTheme} />
       <BrowserRouter>
+        <Navbar theme={theme} setTheme={setTheme} />
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/projects"></Route>
