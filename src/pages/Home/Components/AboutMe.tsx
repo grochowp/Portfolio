@@ -53,7 +53,7 @@ const Section = styled.section`
   height: max-content;
   min-height: 60rem;
   height: 66vh;
-  max-width: 2440px;
+  max-width: 1920px;
   width: 100%;
   margin: auto;
   align-items: center;
@@ -63,19 +63,18 @@ const Section = styled.section`
   article {
     width: 40%;
     height: 30rem;
-    margin: 3rem 10vw 0 5rem;
   }
 
   article:first-child {
     width: 40%;
     height: 50%;
-    margin: 0 0 0 10vw;
+    margin: 0 0 0 5vw;
   }
 
   article:last-child {
     display: flex;
     align-items: center;
-    margin: 3rem 5vw 0 5vw;
+    margin: 3rem 5vw 0 0;
   }
 
   @media (max-width: 1200px) {

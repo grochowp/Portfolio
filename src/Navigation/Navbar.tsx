@@ -59,7 +59,6 @@ export default Navbar;
 
 const Nav = styled.nav`
   position: fixed;
-
   top: 0;
   background-color: ${(props) => props.theme.componentsBackground};
   color: ${(props) => props.theme.color};
@@ -71,6 +70,11 @@ const Nav = styled.nav`
   border-bottom: 3px solid ${(props) => props.theme.pageBackground};
   z-index: 1;
   transition: background-color 1s, color 1s, border 1s;
+
+  @media (min-width: 1920px) {
+    justify-content: center;
+    gap: 66rem;
+  }
 `;
 
 const Title = styled.h1`

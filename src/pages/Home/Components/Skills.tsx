@@ -48,7 +48,7 @@ const Container = styled.div`
   height: max-content;
   transition: 1s;
   width: 100%;
-  max-width: 2440px;
+  max-width: 1920px;
   margin: auto;
 `;
 
