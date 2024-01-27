@@ -2,8 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import Icon from "./IconWrapper";
 import { SKILLS_KNOW, SKILLS_LEARN } from "../../../services/utils";
+import { Link } from "react-router-dom";
 
 const Skills: React.FC = () => {
+  const goToProjects = () => {
+    console.log(1);
+  };
   return (
     <Container>
       <Section>
@@ -12,12 +16,15 @@ const Skills: React.FC = () => {
 
           <Technologies>
             {SKILLS_KNOW.map((skill) => (
-              <Icon
-                key={skill.path}
-                path={skill.path}
-                alt={skill.alt}
-                haveProjects={skill.haveProjects}
-              />
+              <Link to={`/projects?proj=${skill.path}`}>
+                <Icon
+                  key={skill.path}
+                  path={skill.path}
+                  alt={skill.alt}
+                  haveProjects={skill.haveProjects}
+                  onClick={() => goToProjects()}
+                />
+              </Link>
             ))}
           </Technologies>
 
@@ -48,7 +55,7 @@ const Container = styled.div`
   height: max-content;
   transition: 1s;
   width: 100%;
-  max-width: 1920px;
+  max-width: 2130px;
   margin: auto;
 `;
 

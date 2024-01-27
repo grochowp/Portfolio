@@ -5,19 +5,26 @@ interface IconWrapperProps {
   path: string;
   alt: string;
   haveProjects: boolean;
+  onClick?: () => void;
+  isSelected?: boolean;
 }
 
 const Icon: React.FC<IconWrapperProps> = (props) => {
-  const MoveToProjects = (path: string) => {
-    console.log(path);
+  const handleClick = () => {
+    if (props.onClick) {
+      props.onClick();
+    }
   };
 
+  const isSelected = props.isSelected === undefined ? true : props.isSelected;
+
   return (
-    <IconWrapper projects={props.haveProjects.toString()}>
+    <IconWrapper
+      projects={props.haveProjects.toString()}
+      isSelected={isSelected.toString()}
+    >
       <img
-        onClick={
-          props.haveProjects ? () => MoveToProjects(props.path) : undefined
-        }
+        onClick={handleClick}
         src={`./Images/${props.path}.png`}
         alt={props.alt}
       />
@@ -29,6 +36,7 @@ export default Icon;
 
 interface StyledIconWrapperProps {
   projects: string;
+  isSelected: string;
 }
 
 const IconWrapper = styled.div<StyledIconWrapperProps>`
@@ -38,5 +46,7 @@ const IconWrapper = styled.div<StyledIconWrapperProps>`
   margin-bottom: 1rem;
   justify-content: center;
   align-items: center;
+  filter: ${(props) =>
+    props.isSelected === "true" ? "none" : "grayscale(100%)"};
   cursor: ${(props) => (props.projects === "true" ? "pointer" : "default")};
 `;

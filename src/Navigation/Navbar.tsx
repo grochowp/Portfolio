@@ -19,7 +19,7 @@ const Navbar: React.FC<NavbarProps> = (props) => {
   return (
     <Nav>
       <div>
-        <Title>{"<grochowp.dev />"}</Title>
+        <Title>{"<chuj.dev />"}</Title>
       </div>
       <div>
         <Link to="/">
@@ -71,9 +71,9 @@ const Nav = styled.nav`
   z-index: 1;
   transition: background-color 1s, color 1s, border 1s;
 
-  @media (min-width: 1920px) {
+  @media (min-width: 2130px) {
     justify-content: center;
-    gap: 66rem;
+    gap: 79rem;
   }
 `;
 

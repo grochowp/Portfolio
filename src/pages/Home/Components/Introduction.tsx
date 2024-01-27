@@ -48,7 +48,7 @@ const Section = styled.section`
 
   max-height: 88rem;
   transition: 1s;
-  max-width: 1920px;
+  max-width: 2130px;
   margin: auto;
   margin-top: 5.6rem;
   display: flex;

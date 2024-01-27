@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "../pages/Home/Home";
 import Footer from "./Footer";
 import GlobalStyle from "../styles/globalStyles";
+import Projects from "../pages/Projects/Projects";
 
 interface Theme {
   bodyColor: string;
@@ -49,7 +50,7 @@ function App() {
         <Navbar theme={theme} setTheme={setTheme} />
         <Routes>
           <Route path="/" element={<Home />}></Route>
-          <Route path="/projects"></Route>
+          <Route path="/projects" element={<Projects />}></Route>
           <Route path="/contact"></Route>
         </Routes>
       </BrowserRouter>

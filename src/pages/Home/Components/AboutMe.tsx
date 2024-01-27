@@ -53,7 +53,7 @@ const Section = styled.section`
   height: max-content;
   min-height: 60rem;
   height: 66vh;
-  max-width: 1920px;
+  max-width: 2130px;
   width: 100%;
   margin: auto;
   align-items: center;

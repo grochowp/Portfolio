@@ -48,9 +48,9 @@ const FooterBar = styled.footer`
   border-top: 3px solid ${(props) => props.theme.pageBackground};
   transition: 1s;
 
-  @media (min-width: 1920px) {
+  @media (min-width: 2130px) {
     justify-content: center;
-    gap: 95rem;
+    gap: 108rem;
   }
 `;
 
