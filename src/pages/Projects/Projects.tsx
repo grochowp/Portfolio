@@ -32,7 +32,7 @@ const Projects: React.FC = () => {
 
   return (
     <Container>
-      <article>
+      <SelectBar>
         {SKILLS_KNOW.map((skill) => (
           <Icon
             key={skill.path}
@@ -46,7 +46,7 @@ const Projects: React.FC = () => {
         ))}
 
         <h3 onClick={showAllProjects}>Show all</h3>
-      </article>
+      </SelectBar>
 
       {PROJECTS.filter(
         (project) =>
@@ -79,6 +79,51 @@ const Projects: React.FC = () => {
 
 export default Projects;
 
+const SelectBar = styled.article`
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+  margin: 5rem 0;
+  background-color: ${(props) => props.theme.componentsBackground};
+  position: relative;
+  transition: 1s;
+  max-width: 2130px;
+  border-radius: 10px;
+
+  span:hover {
+    filter: none;
+  }
+
+  h3 {
+    margin: 0 2rem 0 5rem;
+    font: 500 1.5rem "Inter", sans-serif;
+    cursor: pointer;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 30%;
+    left: 75.5%;
+    height: 40%;
+    width: 1px;
+    background-color: ${(props) => props.theme.color};
+    transition: 1s;
+  }
+
+  @media (max-width: 900px) {
+    margin: 0.5rem 0;
+
+    span,
+    h3,
+    &::before {
+      display: none;
+    }
+  }
+`;
+
 const Container = styled.section`
   margin-top: 5.6rem;
   height: max-content;
@@ -93,53 +138,6 @@ const Container = styled.section`
   background-color: ${(props) => props.theme.pageBackground};
   transition: 1s;
   color: ${(props) => props.theme.color};
-
-  article:first-child {
-    height: 4rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: max-content;
-    margin: 5rem 0;
-    background-color: ${(props) => props.theme.componentsBackground};
-    position: relative;
-    transition: 1s;
-    max-width: 2130px;
-    border-radius: 10px;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 30%;
-      left: 75%;
-      height: 40%;
-      width: 1px;
-      background-color: ${(props) => props.theme.color};
-      transition: 1s;
-    }
-
-    @media (max-width: 900px) {
-      margin: 0.5rem 0;
-
-      span,
-      h3,
-      &::before {
-        display: none;
-      }
-    }
-  }
-
-  div {
-    &:hover {
-      filter: none;
-    }
-  }
-
-  h3 {
-    margin: 0 2rem 0 5rem;
-    font: 500 1.5rem "Inter", sans-serif;
-    cursor: pointer;
-  }
 `;
 
 const Project = styled.article`
@@ -149,6 +147,7 @@ const Project = styled.article`
   gap: 10rem;
   margin-bottom: 10rem;
   justify-content: center;
+
   div {
     display: flex;
     align-items-center;
@@ -166,9 +165,7 @@ const Project = styled.article`
 
     &.even {
       flex-direction: column-reverse;
-      /* Dodaj resztę stylów specyficznych dla parzystych elementów */
     }
-  
   }
 `;
 

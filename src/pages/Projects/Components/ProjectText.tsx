@@ -4,6 +4,7 @@ import { Project, SKILLS_KNOW } from "../../../services/utils";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import styled from "styled-components";
 import { useState } from "react";
+import { faEarthEurope } from "@fortawesome/free-solid-svg-icons";
 
 interface ProjectProps {
   project: Project;
@@ -39,8 +40,18 @@ const ProjectText: React.FC<ProjectProps> = (props) => {
           )}
         </span>
         <span>
+          {props.project.links.live && (
+            <a
+              style={{ marginRight: "1rem" }}
+              href={props.project.links.live}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon icon={faEarthEurope} />
+            </a>
+          )}
           <a
-            href="https://github.com/grochowp"
+            href={props.project.links.github}
             target="_blank"
             rel="noopener noreferrer"
           >
