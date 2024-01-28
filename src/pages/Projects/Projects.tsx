@@ -147,16 +147,18 @@ const Project = styled.article`
   width: 90vw;
   display: flex;
   gap: 10rem;
-  margin-bottom: 5rem;
-
+  margin-bottom: 10rem;
+  justify-content: center;
   div {
     display: flex;
     align-items-center;
     width: 90%;
+    max-width: 700px;
     max-height: 25rem;
   }
 
   @media (max-width: 900px) {
+    margin-bottom: 5rem;
     flex-direction: column;
     gap: 3rem;
     align-items: center;
