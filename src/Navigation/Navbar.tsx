@@ -19,7 +19,7 @@ const Navbar: React.FC<NavbarProps> = (props) => {
   return (
     <Nav>
       <div>
-        <Title>{"<chuj.dev />"}</Title>
+        <Title>{"<grochowp.dev />"}</Title>
       </div>
       <div>
         <Link to="/">

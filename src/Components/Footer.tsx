@@ -78,6 +78,6 @@ const Icon = styled.a`
   cursor: pointer;
 
   @media (max-width: 500px) {
-    font-size: 1.5rem;
+    font-size: 1.45rem;
   }
 `;

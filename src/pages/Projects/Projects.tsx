@@ -1,13 +1,30 @@
 import styled from "styled-components";
 import { SKILLS_KNOW, PROJECTS } from "../../services/utils";
 import Icon from "../Home/Components/IconWrapper";
-import { Link, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
+import ProjectText from "./Components/ProjectText";
+import { useEffect, useState } from "react";
 
 const Projects: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
+  const [isWindowWide, setIsWindowWide] = useState(window.innerWidth > 900);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsWindowWide(window.innerWidth > 900);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   const selected = searchParams.get("proj");
 
-  const showProjects = () => {};
+  const showProjects = (skill: string) => {
+    setSearchParams({ proj: skill });
+  };
 
   const showAllProjects = () => {
     setSearchParams({ proj: "all" });
@@ -17,38 +34,45 @@ const Projects: React.FC = () => {
     <Container>
       <article>
         {SKILLS_KNOW.map((skill) => (
-          <Link to={`/projects?proj=${skill.path}`}>
-            <Icon
-              key={skill.path}
-              path={skill.path}
-              alt={skill.alt}
-              haveProjects={skill.haveProjects}
-              onClick={showProjects}
-              isSelected={skill.path === selected}
-            />
-          </Link>
+          <Icon
+            key={skill.path}
+            path={skill.path}
+            alt={skill.alt}
+            haveProjects={skill.haveProjects}
+            onClick={() => showProjects(skill.path)}
+            isSelected={skill.path === selected}
+            margin={"1rem 1.2rem"}
+          />
         ))}
 
         <h3 onClick={showAllProjects}>Show all</h3>
       </article>
 
-      {PROJECTS.map((project, index) =>
-        index % 2 === 0 ? (
-          <ProjectLeft key={index}>
-            <div>{project.image.path}</div>
-            <div>
-              <div>{project.name}</div>
-            </div>
-          </ProjectLeft>
-        ) : (
-          <ProjectRight key={index}>
-            <div>
-              <div>{project.name}</div>
-            </div>
-            <div>{project.image.path}</div>
-          </ProjectRight>
-        )
-      )}
+      {PROJECTS.filter(
+        (project) =>
+          selected === "all" ||
+          !selected ||
+          !isWindowWide ||
+          project.tech.some((skill) => skill === selected)
+      ).map((project, index) => (
+        <Project key={project.name} className={index % 2 !== 0 ? "even" : ""}>
+          {index % 2 ? (
+            <>
+              <ProjectText project={project}></ProjectText>
+              <Image>
+                <img src={`${project.image.path}`} alt="Opis obrazu" />
+              </Image>
+            </>
+          ) : (
+            <>
+              <Image>
+                <img src={`${project.image.path}`} alt="Opis obrazu" />
+              </Image>
+              <ProjectText project={project}></ProjectText>
+            </>
+          )}
+        </Project>
+      ))}
     </Container>
   );
 };
@@ -57,8 +81,12 @@ export default Projects;
 
 const Container = styled.section`
   margin-top: 5.6rem;
-  height: 100vh;
+  height: max-content;
+  min-height: calc(100vh - 9rem);
   width: 100vw;
+  max-width: 2130px;
+  margin: auto;
+  margin-top: 5.6rem;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -76,6 +104,7 @@ const Container = styled.section`
     background-color: ${(props) => props.theme.componentsBackground};
     position: relative;
     transition: 1s;
+    max-width: 2130px;
     border-radius: 10px;
 
     &::before {
@@ -89,34 +118,78 @@ const Container = styled.section`
       transition: 1s;
     }
 
-    div {
-      margin: -1rem;
+    @media (max-width: 900px) {
+      margin: 0.5rem 0;
 
-      &:hover {
-        filter: none;
+      span,
+      h3,
+      &::before {
+        display: none;
       }
     }
+  }
 
-    div:first-child {
-      margin-left: 3rem;
+  div {
+    &:hover {
+      filter: none;
     }
+  }
 
-    h3 {
-      margin: 0 3rem 0 5rem;
-      font: 500 1.5rem "Inter", sans-serif;
-      cursor: pointer;
-    }
+  h3 {
+    margin: 0 2rem 0 5rem;
+    font: 500 1.5rem "Inter", sans-serif;
+    cursor: pointer;
   }
 `;
 
-const ProjectLeft = styled.article`
-  width: 100vw;
+const Project = styled.article`
+  max-width: 1920px;
+  width: 90vw;
   display: flex;
-  gap: 3rem;
+  gap: 10rem;
+  margin-bottom: 5rem;
+
+  div {
+    display: flex;
+    align-items-center;
+    width: 90%;
+    max-height: 25rem;
+  }
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+    border-bottom: 2px solid ${(props) => props.theme.color};
+
+    &.even {
+      flex-direction: column-reverse;
+      /* Dodaj resztę stylów specyficznych dla parzystych elementów */
+    }
+  
+  }
 `;
 
-const ProjectRight = styled.article`
-  width: 100vw;
+const Image = styled.div`
   display: flex;
-  gap: 3rem;
+  justify-content: center;
+  transition: 1s;
+  img {
+    min-width: 500px;
+    width: 80%;
+    height: 100%;
+    min-height: 300px;
+
+    @media (max-width: 1200px) {
+      height: 80%;
+      min-width: 400px;
+      width: 100%;
+    }
+
+    @media (max-width: 600px) {
+      min-width: 0;
+      max-width: 100%;
+      min-height: 0;
+    }
+  }
 `;

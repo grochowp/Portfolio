@@ -179,9 +179,6 @@ const Details = styled.div`
 
 const Photos = styled.article`
   img {
-    // background-image: url("../images/ja.png");
-    // background-size: cover;
-
     &:first-child {
       object-fit: cover;
       object-position: left;
@@ -222,7 +219,7 @@ const Photos = styled.article`
       width: 33%;
       &:first-child {
         object-position: center;
-        margin: 2rem 0.5rem 0 0;
+        margin: 2rem 0.5rem 0 1.5rem;
       }
 
       &:nth-child(2) {
@@ -232,7 +229,7 @@ const Photos = styled.article`
 
       &:last-child {
         object-position: center;
-        margin: 2rem 0rem 0 0;
+        margin: 2rem 0 0 0;
       }
 
       &:hover {

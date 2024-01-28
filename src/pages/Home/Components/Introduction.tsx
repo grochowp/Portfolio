@@ -123,6 +123,7 @@ const Intro = styled.div`
     min-width: 28rem;
     max-width: 28rem;
     width: 50vw;
+   
   }
 
   @media (max-width: 500px) {
@@ -139,6 +140,10 @@ const Intro = styled.div`
     transition: 1s;
 
     @media (max-width: 500px) {
+      font-size: 2.5rem;
+    }
+
+    @media (max-width: 1200px) {
       font-size: 2.5rem;
     }
   }

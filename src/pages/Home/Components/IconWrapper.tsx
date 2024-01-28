@@ -7,6 +7,7 @@ interface IconWrapperProps {
   haveProjects: boolean;
   onClick?: () => void;
   isSelected?: boolean;
+  margin?: string;
 }
 
 const Icon: React.FC<IconWrapperProps> = (props) => {
@@ -17,11 +18,13 @@ const Icon: React.FC<IconWrapperProps> = (props) => {
   };
 
   const isSelected = props.isSelected === undefined ? true : props.isSelected;
+  const margin = props.margin === undefined ? "" : props.margin;
 
   return (
     <IconWrapper
       projects={props.haveProjects.toString()}
       isSelected={isSelected.toString()}
+      margin={margin}
     >
       <img
         onClick={handleClick}
@@ -37,11 +40,12 @@ export default Icon;
 interface StyledIconWrapperProps {
   projects: string;
   isSelected: string;
+  margin: string;
 }
 
-const IconWrapper = styled.div<StyledIconWrapperProps>`
+const IconWrapper = styled.span<StyledIconWrapperProps>`
   transition: 1s;
-  margin: 1rem 2.5rem;
+  margin: ${(props) => (props.margin ? props.margin : "1rem 2.5rem")};
   display: flex;
   margin-bottom: 1rem;
   justify-content: center;
