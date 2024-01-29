@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Icon from "./ChangeTheme";
+import ChangeThemeIcon from "./ChangeTheme";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon, faSun } from "@fortawesome/free-regular-svg-icons";
 import { Link } from "react-router-dom";
@@ -18,13 +18,17 @@ interface RightNavProps {
 const RightNav: React.FC<RightNavProps> = (props) => {
   return (
     <Ul open={props.open}>
-      <Icon onClick={() => props.toggleTheme()} top="1.4rem" right="3rem">
+      <ChangeThemeIcon
+        onClick={() => props.toggleTheme()}
+        top="1.4rem"
+        right="3rem"
+      >
         {props.theme === "light" ? (
           <FontAwesomeIcon icon={faMoon} />
         ) : (
           <FontAwesomeIcon icon={faSun} />
         )}
-      </Icon>
+      </ChangeThemeIcon>
       <div
         style={{
           marginTop: "5rem",

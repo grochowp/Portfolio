@@ -5,9 +5,6 @@ import { SKILLS_KNOW, SKILLS_LEARN } from "../../../services/utils";
 import { Link } from "react-router-dom";
 
 const Skills: React.FC = () => {
-  const goToProjects = () => {
-    console.log(1);
-  };
   return (
     <Container>
       <Section>
@@ -22,7 +19,6 @@ const Skills: React.FC = () => {
                   path={skill.path}
                   alt={skill.alt}
                   haveProjects={skill.haveProjects}
-                  onClick={() => goToProjects()}
                 />
               </Link>
             ))}
