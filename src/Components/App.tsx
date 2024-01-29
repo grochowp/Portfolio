@@ -7,6 +7,7 @@ import Home from "../pages/Home/Home";
 import Footer from "./Footer";
 import GlobalStyle from "../styles/globalStyles";
 import Projects from "../pages/Projects/Projects";
+import Contact from "../pages/Contact/Contact";
 
 interface Theme {
   bodyColor: string;
@@ -51,7 +52,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/projects" element={<Projects />}></Route>
-          <Route path="/contact"></Route>
+          <Route path="/contact" element={<Contact />}></Route>
         </Routes>
       </BrowserRouter>
       <Footer />

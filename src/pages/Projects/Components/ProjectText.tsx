@@ -99,11 +99,12 @@ const Text = styled.div<StyledProps>`
     background-color: ${(props) => props.theme.componentsBackground};
     color: ${(props) => props.theme.color};
     border: none;
-
+    transition: 1s;
+    opacity: 1;
     font: 600 1.25rem "Inter", serif;
 
     @media (min-width: 551px) {
-      display: none;
+      opacity: 0;
     }
   }
 

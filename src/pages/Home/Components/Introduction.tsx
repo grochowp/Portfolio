@@ -1,6 +1,7 @@
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Introduction: React.FC = () => {
@@ -29,7 +30,9 @@ const Introduction: React.FC = () => {
             from Warsaw in Poland
           </h3>
 
-          <button>Contact me</button>
+          <Link to="/contact">
+            <button>Contact me</button>
+          </Link>
         </Intro>
 
         <span onClick={moveUser}>
@@ -89,7 +92,6 @@ const Image = styled.div`
   width: 33vw;
   min-width: 30rem;
   max-width: 45rem;
-  background-color: red;
   margin: 2rem;
   transition:1s;
   

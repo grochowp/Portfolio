@@ -174,18 +174,24 @@ const Image = styled.div`
   justify-content: center;
   transition: 1s;
   img {
+    margin-top: 2rem;
     min-width: 500px;
-    width: 80%;
-    height: 100%;
+    width: 70%;
+    height: 80%;
     min-height: 300px;
-
+    transition: 1s;
     @media (max-width: 1200px) {
       height: 80%;
       min-width: 400px;
       width: 100%;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 900px) {
+      margin-top: 0rem;
+    }
+
+    @media (max-width: 550px) {
+      margin-top: -1rem;
       min-width: 0;
       max-width: 100%;
       min-height: 0;
