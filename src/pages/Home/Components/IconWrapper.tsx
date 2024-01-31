@@ -28,7 +28,7 @@ const Icon: React.FC<IconWrapperProps> = (props) => {
     >
       <img
         onClick={handleClick}
-        src={`./Images/${props.path}.png`}
+        src={`images/${props.path}.png`}
         alt={props.alt}
       />
     </IconWrapper>

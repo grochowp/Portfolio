@@ -62,7 +62,7 @@ const Projects: React.FC = () => {
               <Image>
                 <img
                   src={`${project.image.path}`}
-                  alt={`Ikona ${project.image.path}`}
+                  alt={`Ikona ${project.name}`}
                 />
               </Image>
             </>
