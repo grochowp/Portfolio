@@ -60,13 +60,19 @@ const Projects: React.FC = () => {
             <>
               <ProjectText project={project}></ProjectText>
               <Image>
-                <img src={`${project.image.path}`} alt="Opis obrazu" />
+                <img
+                  src={`${project.image.path}`}
+                  alt={`Ikona ${project.image.path}`}
+                />
               </Image>
             </>
           ) : (
             <>
               <Image>
-                <img src={`${project.image.path}`} alt="Opis obrazu" />
+                <img
+                  src={`${project.image.path}`}
+                  alt={`Ikona ${project.image.path}`}
+                />
               </Image>
               <ProjectText project={project}></ProjectText>
             </>

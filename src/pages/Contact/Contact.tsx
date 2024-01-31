@@ -4,7 +4,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { SubmitHandler, useForm } from "react-hook-form";
 import styled from "styled-components";
 import emailjs from "emailjs-com";
-import { SERVICE_ID, TEMPLATE_ID, USER_KEY } from "../../services/utils";
+import {
+  MY_DATA,
+  SERVICE_ID,
+  TEMPLATE_ID,
+  USER_KEY,
+} from "../../services/utils";
 
 type FormValues = {
   name: string;
@@ -45,7 +50,7 @@ const Contact: React.FC = () => {
             </span>
             <div>
               <h2>E-mail</h2>
-              <h4>patgro3@wp.pl</h4>
+              <h4>{MY_DATA.email}</h4>
             </div>
           </section>
 
@@ -55,7 +60,7 @@ const Contact: React.FC = () => {
             </span>
             <div>
               <h2>Location</h2>
-              <h4>Warsaw, Rakowiska (Lubelskie)</h4>
+              <h4>{MY_DATA.location}</h4>
             </div>
           </section>
         </Info>

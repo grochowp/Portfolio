@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { MY_DATA } from "../../../services/utils";
 
 const Introduction: React.FC = () => {
   const moveUser = (): void => {
@@ -26,8 +27,7 @@ const Introduction: React.FC = () => {
         <Intro>
           <h1>Front-end React Developer</h1>
           <h3>
-            Hello, i`m Patryk Grochowski, aspiring front-end React Developer
-            from Warsaw in Poland
+            Hello, i`m {MY_DATA.name} {MY_DATA.surname}, {MY_DATA.description}
           </h3>
 
           <Link to="/contact">
@@ -84,7 +84,7 @@ const Section = styled.section`
 `;
 
 const Image = styled.div`
-  background-image: url("../images/ja.png");
+  background-image: url("../images/myPhoto.png");
   border-radius: 300px 120px 300px 120px;
   background-size: cover;
   background-position: center;

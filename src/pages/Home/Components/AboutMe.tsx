@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { MY_DATA } from "../../../services/utils";
 
 const AboutMe: React.FC = () => {
   return (
@@ -7,31 +8,32 @@ const AboutMe: React.FC = () => {
       <article>
         <Description>
           <h2>ABOUT ME</h2>
-          <h1>aspiring front-end React Developer from Warsaw in Poland</h1>
-          <h4>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Porttitor lacus luctus accumsan tortor. Neque viverra justo nec
-            ultrices dui sapien eget. Vel pretium lectus quam id leo. In cursus
-            turpis massa tincidunt dui ut.
-          </h4>
+          <h1>
+            {[
+              MY_DATA.description[0].toUpperCase(),
+              ...MY_DATA.description.slice(1),
+            ]}
+          </h1>
+          <h4>{MY_DATA.aboutMe}</h4>
         </Description>
         <Details>
           <div>
             <h3>NAME</h3>
-            <p>Patryk Grochowski</p>
+            <p>
+              {MY_DATA.name} {MY_DATA.surname}
+            </p>
           </div>
           <div>
             <h3>EDUCATION</h3>
-            <p>WIT Academy in Warsaw</p>
+            <p>{MY_DATA.education}</p>
           </div>
           <div>
             <h3>EMAIL</h3>
-            <p>patgro3@wp.pl</p>
+            <p>{MY_DATA.email}</p>
           </div>
           <div>
             <h3>EMPLOYMENT</h3>
-            <p>najak</p>
+            <p>{MY_DATA.employment}</p>
           </div>
         </Details>
       </article>
