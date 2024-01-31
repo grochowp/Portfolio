@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import Icon from "./IconWrapper";
-import { SKILLS_KNOW, SKILLS_LEARN } from "../../../services/utils";
 import { Link } from "react-router-dom";
+import { SKILLS_KNOW, SKILLS_LEARN } from "../../../../public/utils";
 
 const Skills: React.FC = () => {
   return (

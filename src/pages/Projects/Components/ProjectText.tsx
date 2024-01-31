@@ -1,10 +1,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Icon from "../../Home/Components/IconWrapper";
-import { Project, SKILLS_KNOW } from "../../../services/utils";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import styled from "styled-components";
 import { useState } from "react";
 import { faEarthEurope } from "@fortawesome/free-solid-svg-icons";
+import { Project, SKILLS_KNOW } from "../../../../public/utils";
 
 interface ProjectProps {
   project: Project;

@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { MY_DATA } from "../../../services/utils";
+import { MY_DATA } from "../../../../public/utils";
 
 const Introduction: React.FC = () => {
   const moveUser = (): void => {

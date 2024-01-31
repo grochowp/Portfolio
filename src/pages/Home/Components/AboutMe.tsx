@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { MY_DATA } from "../../../services/utils";
+import { MY_DATA } from "../../../../public/utils";
 
 const AboutMe: React.FC = () => {
   return (

@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import { SKILLS_KNOW, PROJECTS } from "../../services/utils";
 import Icon from "../Home/Components/IconWrapper";
 import { useSearchParams } from "react-router-dom";
 import ProjectText from "./Components/ProjectText";
 import { useEffect, useState } from "react";
+import { PROJECTS, SKILLS_KNOW } from "../../../public/utils";
 
 const Projects: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();

@@ -9,7 +9,7 @@ import {
   SERVICE_ID,
   TEMPLATE_ID,
   USER_KEY,
-} from "../../services/utils";
+} from "../../../public/utils";
 
 type FormValues = {
   name: string;
