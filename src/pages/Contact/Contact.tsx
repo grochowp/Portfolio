@@ -133,8 +133,7 @@ const Info = styled.div`
 
   @media (max-width: 1200px) {
     flex-direction: row;
-    margin-left: 3rem;
-    gap: 0rem;
+    gap: 5rem;
     width: 20%;
   }
 

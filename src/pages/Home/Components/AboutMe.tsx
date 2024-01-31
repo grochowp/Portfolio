@@ -38,9 +38,9 @@ const AboutMe: React.FC = () => {
         </Details>
       </article>
       <Photos>
-        <img src="/images/ja.png" alt="Opis obrazu" />
-        <img src="/images/ja.png" alt="Opis obrazu" />
-        <img src="/images/ja.png" alt="Opis obrazu" />
+        <img src="/images/myPhoto.png" alt="Opis obrazu" />
+        <img src="/images/myPhoto.png" alt="Opis obrazu" />
+        <img src="/images/myPhoto.png" alt="Opis obrazu" />
       </Photos>
     </Section>
   );
