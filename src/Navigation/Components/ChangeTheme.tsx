@@ -14,7 +14,7 @@ const StyledIcon = styled.span<IconProps>`
   width: 1rem;
   top: ${(props) => props.top || "0.4rem"};
   font-size: 2.25rem;
-  margin-left: ${(props) => (props.theme.name === "light" ? "59px" : "50px")};
+  margin-left: 50px;
   right: ${(props) => props.right || "3rem"};
   cursor: pointer;
   @media (max-width: 900px) {

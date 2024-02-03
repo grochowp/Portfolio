@@ -106,9 +106,9 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 45rem;
 
   article {
-    margin-top: 5.6rem;
     height: 80%;
     width: 80%;
     display: flex;
@@ -231,12 +231,9 @@ const Form = styled.form`
 
   .message {
     padding-top: 1rem;
-    min-width: 39rem;
+    min-width: 0;
     min-height: 7rem;
-    max-height: 15rem;
-    @media (max-width: 6500px) {
-      min-width: 0;
-    }
+    max-height: 10rem;
   }
 
   input[type="submit"] {

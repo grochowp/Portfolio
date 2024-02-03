@@ -1,5 +1,4 @@
-import { faSun, faMoon } from "@fortawesome/free-regular-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { IoSunnyOutline, IoMoonOutline } from "react-icons/io5";
 import React from "react";
 import styled from "styled-components";
 import Burger from "./Components/Burger";
@@ -40,15 +39,11 @@ const Navbar: React.FC<NavbarProps> = (props) => {
 
         <ChangeThemeIcon
           onClick={() => toggleTheme()}
-          top="0.4rem"
+          top="0.7rem"
           right="3rem"
           display="none"
         >
-          {props.theme === "light" ? (
-            <FontAwesomeIcon icon={faMoon} />
-          ) : (
-            <FontAwesomeIcon icon={faSun} />
-          )}
+          {props.theme === "light" ? <IoMoonOutline /> : <IoSunnyOutline />}
         </ChangeThemeIcon>
       </div>
     </Nav>

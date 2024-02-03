@@ -1,9 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import ChangeThemeIcon from "./ChangeTheme";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMoon, faSun } from "@fortawesome/free-regular-svg-icons";
 import { Link } from "react-router-dom";
+import { IoMoonOutline, IoSunnyOutline } from "react-icons/io5";
 
 interface UlProps {
   open: boolean;
@@ -20,14 +19,10 @@ const RightNav: React.FC<RightNavProps> = (props) => {
     <Ul open={props.open}>
       <ChangeThemeIcon
         onClick={() => props.toggleTheme()}
-        top="1.4rem"
+        top="1.5rem"
         right="3rem"
       >
-        {props.theme === "light" ? (
-          <FontAwesomeIcon icon={faMoon} />
-        ) : (
-          <FontAwesomeIcon icon={faSun} />
-        )}
+        {props.theme === "light" ? <IoMoonOutline /> : <IoSunnyOutline />}
       </ChangeThemeIcon>
       <div
         style={{
@@ -60,6 +55,7 @@ const Ul = styled.ul<UlProps>`
   flex-flow: row nowrap;
   display: none;
   border-left: 2px solid ${(props) => props.theme.color};
+  color: ${(props) => props.theme.color};
 
   @media (max-width: 900px) {
     display: flex;
@@ -83,9 +79,7 @@ const Button = styled.button`
   width: 80%;
   transition: 1s;
   background: none;
-  // background-color: ${(props) => props.theme.componentsBackground};
   color: ${(props) => props.theme.color};
-  // border: 1px solid ${(props) => props.theme.color};
   border-radius: 10px;
   border: none;
 `;

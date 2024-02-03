@@ -159,7 +159,7 @@ const Project = styled.article`
     align-items-center;
     width: 90%;
     max-width: 700px;
-    max-height: 25rem;
+    max-height: max-content;
   }
 
   @media (max-width: 900px) {

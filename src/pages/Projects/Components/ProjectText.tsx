@@ -110,22 +110,23 @@ const Text = styled.div<StyledProps>`
 
   h4 {
     font-size: 1.25rem;
-    min-height: 12rem;
+    min-height: 10rem;
+    height: max-content;
     width: 100%;
     display: flex;
-    max-width: 40rem;
+    max-width: 45rem;
     font: 300 17px "Inter", serif;
 
     @media (max-width: 1200px) {
       font-size: 1.2vw;
     }
     @media (max-width: 900px) {
-      font-size: 1rem;
+      font-size: 1.15rem;
     }
     @media (max-width: 550px) {
       display: ${(props) => (props.isExpanded === "true" ? "flex" : "none")};
-      min-height: 0;
-      font-size: 3vw;
+      min-height: max-content;
+      font-size: 1rem;
     }
   }
 
