@@ -53,4 +53,9 @@ const IconWrapper = styled.span<StyledIconWrapperProps>`
   filter: ${(props) =>
     props.isSelected === "true" ? "none" : "grayscale(100%)"};
   cursor: ${(props) => (props.projects === "true" ? "pointer" : "default")};
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
 `;

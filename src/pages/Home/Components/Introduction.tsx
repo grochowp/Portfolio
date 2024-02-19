@@ -26,11 +26,11 @@ const Introduction: React.FC = () => {
         <Image />
         <Intro>
           <h1>Front-end React Developer</h1>
-          <h3>
+          <h2>
             Hello, i`m {MY_DATA.name} {MY_DATA.surname}, {MY_DATA.description}
-          </h3>
+          </h2>
 
-          <Link to="/contact">
+          <Link to="/contact" aria-label="contact path">
             <button>Contact me</button>
           </Link>
         </Intro>
@@ -84,7 +84,7 @@ const Section = styled.section`
 `;
 
 const Image = styled.div`
-  background-image: url("../images/myPhoto.png");
+  background-image: url("../images/myPhoto.webp");
   border-radius: 300px 120px 300px 120px;
   background-size: cover;
   background-position: center;
@@ -150,7 +150,7 @@ const Intro = styled.div`
     }
   }
 
-  h3 {
+  h2 {
     font-family: "Istok Web", sans-serif;
     font-weight: 100;
     font-size: 1.3rem;

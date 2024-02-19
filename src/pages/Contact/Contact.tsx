@@ -21,6 +21,18 @@ type FormValues = {
 const Contact: React.FC = () => {
   const { register, handleSubmit, reset } = useForm<FormValues>();
 
+  // fetch(
+  //   "https://api.themoviedb.org/3/movie/550?api_key=517b169262cdb15744de5a86e7e797c1"
+  // )
+  //   .then((response) => response.json())
+  //   .then((response) => console.log(response))
+  //   .catch((err) => console.error(err));
+
+  fetch("http://www.omdbapi.com/?apikey=6c845de1&t=matrix")
+    .then((response) => response.json())
+    .then((response) => console.log(response))
+    .catch((err) => console.error(err));
+
   const onSubmit: SubmitHandler<FormValues> = (data) => {
     const templateParams = {
       from_name: data.name,

@@ -13,7 +13,10 @@ const Skills: React.FC = () => {
 
           <Technologies>
             {SKILLS_KNOW.map((skill) => (
-              <Link to={`/projects?proj=${skill.path}`}>
+              <Link
+                to={`/projects?proj=${skill.path}`}
+                aria-label="project path"
+              >
                 <Icon
                   key={skill.path}
                   path={skill.path}
@@ -24,7 +27,7 @@ const Skills: React.FC = () => {
             ))}
           </Technologies>
 
-          <Instruction>Click on icon to go to projects</Instruction>
+          <h2>Click on icon to go to projects</h2>
         </article>
         <article>
           <h1>Technologies I want to learn</h1>
@@ -67,6 +70,15 @@ const Section = styled.section`
   justify-content: space-around;
   border-radius: 10px;
   gap: 1rem;
+
+
+  h2 {
+    color: ${(props) => props.theme.color};
+    font-family: "Istok Web", sans-serif;
+    font-weight: 100;
+    font-size: 0.75rem;
+    margin: 1rem 0 1rem 0;
+  }
 
   @media (max-width: 900px) {
     background-color: transparent;
@@ -135,11 +147,4 @@ const Technologies = styled.div`
   @media (max-width: 900px) {
     width: 100%;
   }
-`;
-
-const Instruction = styled.h6`
-  color: ${(props) => props.theme.color};
-  font-family: "Istok Web", sans-serif;
-  font-weight: 100;
-  margin: 1rem 0 1rem 0;
 `;

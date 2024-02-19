@@ -19,16 +19,23 @@ const Footer: React.FC = () => {
           href="https://github.com/grochowp"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="github icon"
         >
           <FontAwesomeIcon icon={faGithub} />
         </Icon>
-        <Icon>
+        <Icon
+          href="https://www.linkedin.com/in/patryk-grochowski-063a972b5/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="linkedin icon"
+        >
           <FontAwesomeIcon icon={faLinkedin} />
         </Icon>
         <Icon
           href="https://www.instagram.com/grochu.p/"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="instagram icon"
         >
           <FontAwesomeIcon icon={faInstagram} />
         </Icon>

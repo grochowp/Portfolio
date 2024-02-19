@@ -46,6 +46,7 @@ const ProjectText: React.FC<ProjectProps> = (props) => {
               href={props.project.links.live}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={`${props.project.name} live link`}
             >
               <FontAwesomeIcon icon={faEarthEurope} />
             </a>
@@ -54,6 +55,7 @@ const ProjectText: React.FC<ProjectProps> = (props) => {
             href={props.project.links.github}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={`${props.project.name} github link`}
           >
             <FontAwesomeIcon icon={faGithub} />
           </a>

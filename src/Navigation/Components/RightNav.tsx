@@ -16,11 +16,11 @@ interface RightNavProps {
 
 const RightNav: React.FC<RightNavProps> = (props) => {
   return (
-    <Ul open={props.open}>
+    <BurgerMenu open={props.open}>
       <ChangeThemeIcon
         onClick={() => props.toggleTheme()}
-        top="1.5rem"
-        right="3rem"
+        top="2.5rem"
+        right="1.5rem"
       >
         {props.theme === "light" ? <IoMoonOutline /> : <IoSunnyOutline />}
       </ChangeThemeIcon>
@@ -29,29 +29,28 @@ const RightNav: React.FC<RightNavProps> = (props) => {
           marginTop: "5rem",
         }}
       >
-        <Link to="/">
+        <Link to="/" aria-label="home path">
           <Button type="button">Home</Button>
         </Link>
 
-        <Link to="/projects">
+        <Link to="/projects" aria-label="project path">
           <Button type="button">Projects</Button>
         </Link>
 
-        <Link to="/contact">
+        <Link to="/contact" aria-label="contact path">
           <Button type="button" style={{ marginRight: "5rem" }}>
             Contact
           </Button>
         </Link>
       </div>
-    </Ul>
+    </BurgerMenu>
   );
 };
 
 export default RightNav;
 
-const Ul = styled.ul<UlProps>`
+const BurgerMenu = styled.div<UlProps>`
   transition: 1s;
-  list-style: none;
   flex-flow: row nowrap;
   display: none;
   border-left: 2px solid ${(props) => props.theme.color};
@@ -71,7 +70,7 @@ const Ul = styled.ul<UlProps>`
 `;
 
 const Button = styled.button`
-  margin: 1rem 0;
+  margin: 1rem 1rem;
   font-size: 1.5rem;
   font-family: "Inter", sans-serif;
   cursor: pointer;

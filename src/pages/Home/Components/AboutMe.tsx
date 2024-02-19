@@ -7,40 +7,40 @@ const AboutMe: React.FC = () => {
     <Section>
       <article>
         <Description>
-          <h2>ABOUT ME</h2>
-          <h1>
+          <h1>ABOUT ME</h1>
+          <h2>
             {[
               MY_DATA.description[0].toUpperCase(),
               ...MY_DATA.description.slice(1),
             ]}
-          </h1>
-          <h4>{MY_DATA.aboutMe}</h4>
+          </h2>
+          <h3>{MY_DATA.aboutMe}</h3>
         </Description>
         <Details>
           <div>
-            <h3>NAME</h3>
+            <h4>NAME</h4>
             <p>
               {MY_DATA.name} {MY_DATA.surname}
             </p>
           </div>
           <div>
-            <h3>EDUCATION</h3>
+            <h4>EDUCATION</h4>
             <p>{MY_DATA.education}</p>
           </div>
           <div>
-            <h3>EMAIL</h3>
+            <h4>EMAIL</h4>
             <p>{MY_DATA.email}</p>
           </div>
           <div>
-            <h3>EMPLOYMENT</h3>
+            <h4>EMPLOYMENT</h4>
             <p>{MY_DATA.employment}</p>
           </div>
         </Details>
       </article>
       <Photos>
-        <img src="/images/myPhoto.png" alt="Opis obrazu" />
-        <img src="/images/myPhoto.png" alt="Opis obrazu" />
-        <img src="/images/myPhoto.png" alt="Opis obrazu" />
+        <img src="/images/myPhoto.webp" alt="Opis obrazu" />
+        <img src="/images/myPhoto.webp" alt="Opis obrazu" />
+        <img src="/images/myPhoto.webp" alt="Opis obrazu" />
       </Photos>
     </Section>
   );
@@ -87,7 +87,7 @@ const Section = styled.section`
     }
 
     article:first-child {
-      width: 75%;
+      width: 80%;
       height: 50%;
 
       div {
@@ -98,21 +98,21 @@ const Section = styled.section`
 `;
 
 const Description = styled.div`
-  h2 {
-    color: blue;
+  h1 {
+    color: #8c90f8;
     font: 100 1.5rem "Koulen", sans-serif;
     margin: 0;
     transition: 1s;
   }
 
-  h1 {
+  h2 {
     font: 700 2.25rem "Lalezan", sans-serif;
     margin: 0;
     width: 90%;
     transition: 1s;
   }
 
-  h4 {
+  h3 {
     width: 80%;
     font: 500 1rem "Inter", sans-serif;
     transition: 1s;
@@ -124,11 +124,12 @@ const Description = styled.div`
     }
 
     h2 {
-      font-size: 1rem;
+      font-size: 1.25rem;
     }
 
-    h4 {
-      font-size: 0.75rem;
+    h3 {
+      width: 100%;
+      font-size: 0.85rem;
     }
   }
 `;
@@ -146,7 +147,7 @@ const Details = styled.div`
     font: 500 1rem "Kreon", serif;
   }
 
-  div h3 {
+  div h4 {
     margin-bottom: 0.5rem;
     transition: 1s;
   }
@@ -158,15 +159,7 @@ const Details = styled.div`
 
   @media (max-width: 900px) {
     div {
-      height: 2.5rem;
-    }
-
-    div h3 {
-      margin-bottom: 0rem;
-    }
-
-    div p {
-      margin-top: 0rem;
+      height: 4rem;
     }
   }
 

@@ -21,15 +21,15 @@ const Navbar: React.FC<NavbarProps> = (props) => {
         <Title>{"<grochowp.dev />"}</Title>
       </div>
       <div>
-        <Link to="/">
+        <Link to="/" aria-label="home path">
           <Button type="button">Home</Button>
         </Link>
 
-        <Link to="/projects">
+        <Link to="/projects" aria-label="project path">
           <Button type="button">Projects</Button>
         </Link>
 
-        <Link to="/contact">
+        <Link to="/contact" aria-label="contact path">
           <Button type="button" style={{ marginRight: "5rem" }}>
             Contact
           </Button>
