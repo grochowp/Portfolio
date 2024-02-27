@@ -38,9 +38,9 @@ const AboutMe: React.FC = () => {
         </Details>
       </article>
       <Photos>
-        <img src="/images/myPhoto.webp" alt="Opis obrazu" />
-        <img src="/images/myPhoto.webp" alt="Opis obrazu" />
-        <img src="/images/myPhoto.webp" alt="Opis obrazu" />
+        <img src="/images/myPhoto.webp" alt="my photo" />
+        <img src="/images/meEg.webp" alt="My photo in Egypt" />
+        <img src="/images/mecat.webp" alt="my photo with cat" />
       </Photos>
     </Section>
   );
@@ -164,6 +164,9 @@ const Details = styled.div`
   }
 
   @media (max-width: 500px) {
+    div {
+      height: 2.5rem;
+    }
     grid-template-areas:
       "top-left"
       "top-right"

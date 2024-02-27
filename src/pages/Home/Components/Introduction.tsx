@@ -84,7 +84,7 @@ const Section = styled.section`
 `;
 
 const Image = styled.div`
-  background-image: url("../images/myPhoto.webp");
+  background-image: url("../images/me.webp");
   border-radius: 300px 120px 300px 120px;
   background-size: cover;
   background-position: center;
