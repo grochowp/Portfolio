@@ -18,7 +18,9 @@ const Navbar: React.FC<NavbarProps> = (props) => {
   return (
     <Nav>
       <div>
-        <Title>{"<grochowp.dev />"}</Title>
+        <Link to="/" aria-label="home path">
+          <Title>{"<grochowp.dev />"}</Title>
+        </Link>
       </div>
       <div>
         <Link to="/" aria-label="home path">
@@ -65,6 +67,11 @@ const Nav = styled.nav`
   border-bottom: 3px solid ${(props) => props.theme.pageBackground};
   z-index: 1;
   transition: background-color 1s, color 1s, border 1s;
+
+  a {
+    text-decoration: none;
+    color: ${(props) => props.theme.color};
+  }
 
   @media (min-width: 2130px) {
     justify-content: center;
