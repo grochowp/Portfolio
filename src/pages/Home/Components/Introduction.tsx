@@ -61,8 +61,11 @@ const Section = styled.section`
   position: relative;
   flex-wrap: wrap;
 
+  @media (max-width: 1071px) {
+    gap: 5rem;
+  }
   @media (max-width: 500px) {
-    min-height: 0;
+    gap: 0rem;
   }
 
   span {
@@ -89,12 +92,11 @@ const Image = styled.div`
   background-size: cover;
   background-position: center;
   height: 30rem;
-  width: 33vw;
-  min-width: 30rem;
-  max-width: 45rem;
+  width: clamp(30rem, 40vw, 40rem);
+
   margin: 2rem;
-  transition:1s;
-  
+  transition: 1s;
+
   @media (min-width: 501px) and (max-width: 1200px) {
     margin: 2rem 0 -2rem 0;
     width: 28rem;
@@ -104,13 +106,12 @@ const Image = styled.div`
   }
 
   @media (max-width: 500px) {
-    margin: 2rem 0 -2rem; 0;
+    margin: 2rem 0 -2rem 0;
     min-width: 18rem;
     width: 80vw;
     height: 30vh;
     max-height: 15rem;
   }
- 
 `;
 
 const Intro = styled.div`
@@ -125,7 +126,6 @@ const Intro = styled.div`
     min-width: 28rem;
     max-width: 28rem;
     width: 50vw;
-   
   }
 
   @media (max-width: 500px) {
@@ -135,25 +135,26 @@ const Intro = styled.div`
   }
 
   h1 {
-    font-size: 4rem;
+    font-size: clamp(3rem, 4vw, 4rem);
     margin: -4rem 0 1rem 0;
     font-family: "Inika", serif;
     font-weight: 200;
     transition: 1s;
-
-    @media (max-width: 500px) {
-      font-size: 2.5rem;
-    }
+    height: 10rem;
 
     @media (max-width: 1200px) {
       font-size: 2.5rem;
+      height: clamp(6rem, 10vw, 10rem);
+    }
+    @media (max-width: 500px) {
+      font-size: clamp(2rem, 2.5vw, 2.5rem);
     }
   }
 
   h2 {
     font-family: "Istok Web", sans-serif;
     font-weight: 100;
-    font-size: 1.3rem;
+    font-size: clamp(1rem, 1.3vw, 1.3rem);
     transition: 1s;
 
     @media (max-width: 500px) {
@@ -164,8 +165,8 @@ const Intro = styled.div`
   button {
     background-color: ${(props) => props.theme.componentsBackground};
     color: ${(props) => props.theme.color};
-     font: 600 1.5rem "Inter", serif;
-     width: 13rem;
+    font: 600 1.5rem "Inter", serif;
+    width: 13rem;
     height: 4rem;
     border: none;
     border-radius: 10px;
@@ -194,4 +195,5 @@ const Intro = styled.div`
         box-shadow: none;
       }
     }
+  }
 `;

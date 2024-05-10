@@ -19,10 +19,10 @@ interface Theme {
 }
 
 const LightTheme: Theme = {
-  bodyColor: "#D9D9D9",
-  pageBackground: "#F9f6f8",
-  componentsBackground: "#E1E1E1",
-  color: "#393939",
+  bodyColor: "#ADACAC",
+  pageBackground: "#F9FFFF",
+  componentsBackground: "#F3F3F3",
+  color: "#212121",
   colorOnHover: "#000000",
   name: "light",
 };
