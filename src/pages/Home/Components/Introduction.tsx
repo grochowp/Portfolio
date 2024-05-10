@@ -2,7 +2,7 @@ import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Link } from "react-router-dom";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { MY_DATA } from "../../../../public/utils";
 
 const Introduction: React.FC = () => {
@@ -44,7 +44,23 @@ const Introduction: React.FC = () => {
 };
 
 export default Introduction;
-
+const rainbowText = keyframes`
+  from {
+    color: #6666ff;
+  }
+  10% {
+    color: #0099ff;
+  }
+  50% {
+    color: #00ff88;
+  }
+  75% {
+    color: #ff3399;
+  }
+  100% {
+    color: #6666ff;
+  }
+`;
 const Section = styled.section`
   background-color: ${(props) => props.theme.pageBackground};
   height: calc(100vh - 5.6rem);
@@ -141,6 +157,7 @@ const Intro = styled.div`
     font-weight: 200;
     transition: 1s;
     height: 10rem;
+    animation: ${rainbowText} 15s infinite;
 
     @media (max-width: 1200px) {
       font-size: 2.5rem;

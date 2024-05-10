@@ -51,7 +51,7 @@ interface BurgerProps {
 }
 
 const Burger: React.FC<BurgerProps> = ({ theme, toggleTheme }) => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState<boolean>(false);
 
   return (
     <>

@@ -11,7 +11,7 @@ interface ProjectProps {
 }
 
 const ProjectText: React.FC<ProjectProps> = (props) => {
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
   const handleExpand = () => {
     setIsExpanded(!isExpanded);

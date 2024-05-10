@@ -12,12 +12,13 @@ const Skills: React.FC = () => {
           <h1>Technologies I`ve used</h1>
 
           <Technologies>
-            {SKILLS_KNOW.map((skill) => (
+            {SKILLS_KNOW.map((skill, index) => (
               <Link
                 to={`/projects?proj=${skill.path}`}
                 aria-label="project path"
               >
                 <Icon
+                  delay={Number((index * 0.1).toFixed(1))}
                   key={skill.path}
                   path={skill.path}
                   alt={skill.alt}
@@ -143,6 +144,7 @@ const Technologies = styled.div`
   display: flex;
   color: ${(props) => props.theme.color};
   flex-wrap: wrap;
+  position: relative;
 
   @media (max-width: 900px) {
     width: 100%;

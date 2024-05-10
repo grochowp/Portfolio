@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Icon from "../Home/Components/IconWrapper";
-import { useSearchParams } from "react-router-dom";
+import { useLocation, useSearchParams } from "react-router-dom";
 import ProjectText from "./Components/ProjectText";
 import { useEffect, useState } from "react";
 import { PROJECTS, SKILLS_KNOW } from "../../../public/utils";
@@ -8,7 +8,13 @@ import { PROJECTS, SKILLS_KNOW } from "../../../public/utils";
 const Projects: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [isWindowWide, setIsWindowWide] = useState(window.innerWidth > 900);
+  const { pathname } = useLocation();
 
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scrolls up after subpage changes
+  }, [pathname]);
+
+  // Change isWindowWide depending on window width, if width < 900, then all projects should be visible
   useEffect(() => {
     const handleResize = () => {
       setIsWindowWide(window.innerWidth > 900);
@@ -20,6 +26,7 @@ const Projects: React.FC = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
   const selected = searchParams.get("proj");
 
   const showProjects = (skill: string) => {
@@ -84,6 +91,30 @@ const Projects: React.FC = () => {
 };
 
 export default Projects;
+
+const showProjectsLeft = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+`;
+
+const showProjectsRight = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+`;
 
 const SelectBar = styled.article`
   height: 4rem;
@@ -156,12 +187,23 @@ const Project = styled.article`
 
   div {
     display: flex;
-    align-items-center;
     width: 90%;
     max-width: 700px;
     max-height: max-content;
+    animation: ${showProjectsLeft} 2s ease-in-out;
+    @media (max-width: 900px) {
+      animation: none;
+    }
   }
 
+  &.even {
+    div {
+      animation: ${showProjectsRight} 2s ease-in-out;
+      @media (max-width: 900px) {
+        animation: none;
+      }
+    }
+  }
   @media (max-width: 900px) {
     margin-bottom: 5rem;
     flex-direction: column;

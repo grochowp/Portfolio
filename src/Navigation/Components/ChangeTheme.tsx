@@ -9,19 +9,6 @@ interface IconProps {
   onClick?: () => void;
 }
 
-const StyledIcon = styled.span<IconProps>`
-  position: relative;
-  width: 1rem;
-  top: ${(props) => props.top || "0.4rem"};
-  font-size: 2.25rem;
-  margin-left: 50px;
-  right: ${(props) => props.right || "3rem"};
-  cursor: pointer;
-  @media (max-width: 900px) {
-    display: ${(props) => props.display || ""};
-  }
-`;
-
 const ChangeThemeIcon: React.FC<IconProps> = ({
   top,
   right,
@@ -37,3 +24,16 @@ const ChangeThemeIcon: React.FC<IconProps> = ({
 };
 
 export default ChangeThemeIcon;
+
+const StyledIcon = styled.span<IconProps>`
+  position: relative;
+  width: 1rem;
+  top: ${(props) => props.top || "0.4rem"};
+  font-size: 2.25rem;
+  margin-left: 50px;
+  right: ${(props) => props.right || "3rem"};
+  cursor: pointer;
+  @media (max-width: 900px) {
+    display: ${(props) => props.display || ""};
+  }
+`;
