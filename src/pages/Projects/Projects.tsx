@@ -143,7 +143,7 @@ const SelectBar = styled.article`
     content: "";
     position: absolute;
     top: 30%;
-    left: 75.5%;
+    left: 80%;
     height: 40%;
     width: 1px;
     background-color: ${(props) => props.theme.color};
