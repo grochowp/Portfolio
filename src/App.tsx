@@ -1,13 +1,14 @@
-import { useState } from "react";
-import Navbar from "../Navigation/Navbar";
+import { Suspense, lazy, useState } from "react";
+import Navbar from "./Navigation/Navbar";
 import { ThemeProvider } from "styled-components";
-
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "../pages/Home/Home";
-import Footer from "./Footer";
-import GlobalStyle from "../styles/globalStyles";
-import Projects from "../pages/Projects/Projects";
-import Contact from "../pages/Contact/Contact";
+import Footer from "./Components/Footer";
+import GlobalStyle from "./styles/globalStyles";
+import { Spinner } from "./pages/Contact/Components/Spinner";
+
+const Home = lazy(() => import("./pages/Home/Home"));
+const Projects = lazy(() => import("./pages/Projects/Projects"));
+const Contact = lazy(() => import("./pages/Contact/Contact"));
 
 interface Theme {
   bodyColor: string;
@@ -47,13 +48,16 @@ function App() {
   return (
     <ThemeProvider theme={themes[theme]}>
       <GlobalStyle />
+
       <BrowserRouter>
         <Navbar theme={theme} setTheme={setTheme} />
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/projects" element={<Projects />}></Route>
-          <Route path="/contact" element={<Contact />}></Route>
-        </Routes>
+        <Suspense fallback={<Spinner />}>
+          <Routes>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/projects" element={<Projects />}></Route>
+            <Route path="/contact" element={<Contact />}></Route>
+          </Routes>
+        </Suspense>
       </BrowserRouter>
       <Footer />
     </ThemeProvider>
