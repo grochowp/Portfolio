@@ -4,6 +4,7 @@ import { useLocation, useSearchParams } from "react-router-dom";
 import ProjectText from "./Components/ProjectText";
 import { useEffect, useState } from "react";
 import { PROJECTS, SKILLS_KNOW } from "../../../public/utils";
+import show from "../../styles/show";
 
 const Projects: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -116,6 +117,22 @@ const showProjectsRight = keyframes`
   }
 `;
 
+const Container = styled.section`
+  margin-top: 5.6rem;
+  height: max-content;
+  min-height: calc(100vh - 9rem);
+  width: 100vw;
+  max-width: 2130px;
+  margin: auto;
+  margin-top: 5.6rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: ${(props) => props.theme.pageBackground};
+  transition: 1s;
+  color: ${(props) => props.theme.color};
+  animation: ${show} 2s;
+`;
 const SelectBar = styled.article`
   height: 4rem;
   display: flex;
@@ -159,22 +176,6 @@ const SelectBar = styled.article`
       display: none;
     }
   }
-`;
-
-const Container = styled.section`
-  margin-top: 5.6rem;
-  height: max-content;
-  min-height: calc(100vh - 9rem);
-  width: 100vw;
-  max-width: 2130px;
-  margin: auto;
-  margin-top: 5.6rem;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  background-color: ${(props) => props.theme.pageBackground};
-  transition: 1s;
-  color: ${(props) => props.theme.color};
 `;
 
 const Project = styled.article`
