@@ -73,7 +73,6 @@ const IconWrapper = styled.span<StyledIconWrapperProps>`
   img {
     position: relative;
     animation: ${jump} 3s infinite ${(props) => props.delay}s;
-    width: 100%;
-    height: 100%;
+    width: 48px;
   }
 `;

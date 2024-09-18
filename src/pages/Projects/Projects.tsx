@@ -12,10 +12,9 @@ const Projects: React.FC = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0); // Scrolls up after subpage changes
+    window.scrollTo(0, 0);
   }, [pathname]);
 
-  // Change isWindowWide depending on window width, if width < 900, then all projects should be visible
   useEffect(() => {
     const handleResize = () => {
       setIsWindowWide(window.innerWidth > 900);
@@ -49,7 +48,7 @@ const Projects: React.FC = () => {
             haveProjects={skill.haveProjects}
             onClick={() => showProjects(skill.path)}
             isSelected={skill.path === selected}
-            margin={"1rem 1.2rem"}
+            margin={"1rem .75rem"}
           />
         ))}
 
