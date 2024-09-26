@@ -10,7 +10,7 @@ const Home: React.FC = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0); // Scrolls up after subpage changes
+    window.scrollTo(0, 0);
   }, [pathname]);
 
   return (

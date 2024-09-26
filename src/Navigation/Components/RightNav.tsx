@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import ChangeThemeIcon from "./ChangeTheme";
+import ChangeThemeIcon from "../../Components/ChangeTheme";
 import { Link } from "react-router-dom";
-import { IoMoonOutline, IoSunnyOutline } from "react-icons/io5";
 
 interface UlProps {
   open: boolean;
@@ -17,13 +16,9 @@ interface RightNavProps {
 const RightNav: React.FC<RightNavProps> = (props) => {
   return (
     <BurgerMenu open={props.open}>
-      <ChangeThemeIcon
-        onClick={() => props.toggleTheme()}
-        top="2.5rem"
-        right="1.5rem"
-      >
-        {props.theme === "light" ? <IoMoonOutline /> : <IoSunnyOutline />}
-      </ChangeThemeIcon>
+      <div style={{ marginTop: "2.45rem", marginLeft: "1.5rem" }}>
+        <ChangeThemeIcon toggleTheme={props.toggleTheme} theme={props.theme} />
+      </div>
       <div
         style={{
           marginTop: "5rem",
@@ -53,13 +48,12 @@ const BurgerMenu = styled.div<UlProps>`
   transition: 1s;
   flex-flow: row nowrap;
   display: none;
-  border-left: 2px solid ${(props) => props.theme.color};
-  color: ${(props) => props.theme.color};
+  border-left: 1px solid ${(props) => props.theme.color};
 
   @media (max-width: 900px) {
     display: flex;
     flex-flow: column nowrap;
-    background-color: ${(props) => props.theme.pageBackground};
+    background-color: ${(props) => props.theme.componentsBackground};
     position: fixed;
     transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
     top: -1rem;
@@ -78,7 +72,7 @@ const Button = styled.button`
   width: 80%;
   transition: 1s;
   background: none;
-  color: ${(props) => props.theme.color};
+  color: #f5f5f5;
   border-radius: 10px;
   border: none;
 `;

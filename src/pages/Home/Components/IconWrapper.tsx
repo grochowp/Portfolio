@@ -67,8 +67,7 @@ const IconWrapper = styled.span<StyledIconWrapperProps>`
   margin-bottom: 1rem;
   justify-content: center;
   align-items: center;
-  filter: ${(props) =>
-    props.isSelected === "true" ? "none" : "grayscale(100%)"};
+  opacity: ${(props) => (props.isSelected === "true" ? 1 : 0.25)};
   cursor: ${(props) => (props.projects === "true" ? "pointer" : "default")};
   img {
     position: relative;

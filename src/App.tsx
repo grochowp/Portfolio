@@ -21,8 +21,8 @@ interface Theme {
 
 const LightTheme: Theme = {
   bodyColor: "#ADACAC",
-  pageBackground: "#F9FFFF",
-  componentsBackground: "#F3F3F3",
+  pageBackground: "#F5F5F5",
+  componentsBackground: "#303030",
   color: "#212121",
   colorOnHover: "#000000",
   name: "light",
@@ -30,9 +30,9 @@ const LightTheme: Theme = {
 
 const DarkTheme: Theme = {
   bodyColor: "#393939",
-  pageBackground: "#141212",
-  componentsBackground: "#202020",
-  color: "#C3C3C3",
+  pageBackground: "#171717",
+  componentsBackground: "#303030",
+  color: "#F5F5F5",
   colorOnHover: "#ffffff",
   name: "dark",
 };
@@ -53,9 +53,9 @@ function App() {
         <Navbar theme={theme} setTheme={setTheme} />
         <Suspense fallback={<Spinner />}>
           <Routes>
-            <Route path="/" element={<Home />}></Route>
-            <Route path="/projects" element={<Projects />}></Route>
-            <Route path="/contact" element={<Contact />}></Route>
+            <Route path="/" element={<Home />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
         </Suspense>
       </BrowserRouter>

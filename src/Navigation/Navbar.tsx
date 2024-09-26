@@ -1,9 +1,8 @@
-import { IoSunnyOutline, IoMoonOutline } from "react-icons/io5";
 import React from "react";
 import styled from "styled-components";
 import Burger from "./Components/Burger";
-import ChangeThemeIcon from "./Components/ChangeTheme";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import ChangeThemeIcon from "../Components/ChangeTheme";
 
 interface NavbarProps {
   theme: string;
@@ -14,47 +13,52 @@ const Navbar: React.FC<NavbarProps> = (props) => {
   const toggleTheme = () => {
     props.setTheme(props.theme === "light" ? "dark" : "light");
   };
+  const { pathname } = useLocation();
 
   return (
-    <Nav>
+    <Container>
       <div>
         <Link to="/" aria-label="home path">
           <Title>{"<grochowp.dev />"}</Title>
         </Link>
       </div>
-      <div>
+      <div className="navigation">
         <Link to="/" aria-label="home path">
-          <Button type="button">Home</Button>
+          <Button type="button" className={pathname === "/" ? "active" : ""}>
+            Home
+          </Button>
         </Link>
 
         <Link to="/projects" aria-label="project path">
-          <Button type="button">Projects</Button>
+          <Button
+            type="button"
+            className={pathname === "/projects" ? "active" : ""}
+          >
+            Projects
+          </Button>
         </Link>
 
         <Link to="/contact" aria-label="contact path">
-          <Button type="button" style={{ marginRight: "5rem" }}>
+          <Button
+            type="button"
+            className={pathname === "/contact" ? "active" : ""}
+          >
             Contact
           </Button>
         </Link>
 
-        <Burger toggleTheme={toggleTheme} theme={props.theme} />
-
-        <ChangeThemeIcon
-          onClick={() => toggleTheme()}
-          top="0.7rem"
-          right="3rem"
-          display="none"
-        >
-          {props.theme === "light" ? <IoMoonOutline /> : <IoSunnyOutline />}
-        </ChangeThemeIcon>
+        <div>
+          <ChangeThemeIcon toggleTheme={toggleTheme} theme={props.theme} />
+        </div>
       </div>
-    </Nav>
+      <Burger toggleTheme={toggleTheme} theme={props.theme} />
+    </Container>
   );
 };
 
 export default Navbar;
 
-const Nav = styled.nav`
+const Container = styled.nav`
   position: fixed;
   top: 0;
   background-color: ${(props) => props.theme.componentsBackground};
@@ -64,18 +68,29 @@ const Nav = styled.nav`
   height: 5.6rem;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 3px solid ${(props) => props.theme.pageBackground};
   z-index: 1;
-  transition: background-color 1s, color 1s, border 1s;
 
   a {
     text-decoration: none;
     color: ${(props) => props.theme.color};
   }
 
+  .navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    div {
+      @media (max-width: 900px) {
+        display: none;
+      }
+    }
+  }
+
   @media (min-width: 2130px) {
     justify-content: center;
-    gap: 79rem;
+    gap: 85rem;
   }
 `;
 
@@ -84,26 +99,30 @@ const Title = styled.h1`
   bottom: 0.1rem;
   margin-left: 2rem;
   font-size: 1.75rem;
-  font-family: "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: #f5f5f5;
   transition: 1s;
+
   @media (max-width: 500px) {
     font-size: 1.5rem;
   }
 `;
 
 const Button = styled.button`
-  margin: 2rem;
-  font-size: 1.25rem;
-  font-family: "Inter", sans-serif;
-  font-weight: 500;
+  font-size: 1.4rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 200;
   border: none;
+  opacity: 0.5;
   background-color: ${(props) => props.theme.componentsBackground};
-  color: ${(props) => props.theme.color};
+  color: #f5f5f5;
   cursor: pointer;
   transition: background-color 1s, color 1s;
 
-  &:hover {
-    color: ${(props) => props.theme.colorOnHover};
+  &.active {
+    font-weight: 400;
+    opacity: 1;
   }
 
   @media (max-width: 900px) {

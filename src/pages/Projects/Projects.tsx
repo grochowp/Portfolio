@@ -28,7 +28,7 @@ const Projects: React.FC = () => {
   }, []);
 
   const selected = searchParams.get("proj");
-
+  console.log(selected);
   const showProjects = (skill: string) => {
     setSearchParams({ proj: skill });
   };
@@ -52,7 +52,12 @@ const Projects: React.FC = () => {
           />
         ))}
 
-        <h3 onClick={showAllProjects}>Show all</h3>
+        <h3
+          onClick={showAllProjects}
+          style={{ opacity: selected === "all" || !selected ? 1 : 0.25 }}
+        >
+          Show all
+        </h3>
       </SelectBar>
 
       {PROJECTS.filter(
@@ -153,6 +158,7 @@ const SelectBar = styled.article`
     margin: 0 2rem 0 5rem;
     font: 500 1.5rem "Inter", sans-serif;
     cursor: pointer;
+    color: #f5f5f5;
   }
 
   &::before {
@@ -162,7 +168,7 @@ const SelectBar = styled.article`
     left: 80%;
     height: 40%;
     width: 1px;
-    background-color: ${(props) => props.theme.color};
+    background-color: #f5f5f5;
     transition: 1s;
   }
 
