@@ -74,9 +74,9 @@ const Section = styled.section`
 
 
   h2 {
-    color: ${(props) => props.theme.color};
-    font-family: "Istok Web", sans-serif;
-    font-weight: 100;
+    color: #f5f5f5;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
     font-size: 0.75rem;
     margin: 1rem 0 1rem 0;
   }
@@ -106,7 +106,7 @@ const Section = styled.section`
       left: 101%;
       height: 30%;
       width: 1px;
-      background-color: ${(props) => props.theme.color};
+      background-color: #f5f5f5;
     }
 
     &:not(:first-child)::before {
@@ -125,12 +125,12 @@ const Section = styled.section`
 
 
   h1{
-    font-family: "Istok Web", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 1.75rem;
 
     text-align: center;
     margin: 3rem 1rem 2.5rem 1rem;
-    color: ${(props) => props.theme.color};
+    color: #f5f5f5;
 
     @media (max-width: 900px) {
       margin: 2rem 0 1rem 0;

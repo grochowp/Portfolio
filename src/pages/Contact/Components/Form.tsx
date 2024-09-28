@@ -2,6 +2,7 @@ import emailjs from "emailjs-com";
 import { SERVICE_ID, TEMPLATE_ID, USER_KEY } from "../../../../public/utils";
 import { SubmitHandler, useForm } from "react-hook-form";
 import styled from "styled-components";
+import { FiSend } from "react-icons/fi";
 
 type FormValues = {
   name: string;
@@ -55,15 +56,15 @@ export const Form = () => {
           required
         />
       </div>
-
-      <input type="submit" value="Send" />
+      <button type="submit">
+        <FiSend /> Submit
+      </button>
     </FormContainer>
   );
 };
 
 const FormContainer = styled.form`
   margin-top: 2rem;
-  color: ${(props) => props.theme.color};
   align-items: flex-start;
   display: flex;
   flex-direction: column;
@@ -72,10 +73,10 @@ const FormContainer = styled.form`
 
   div {
     display: flex;
-    gap: 3rem;
+    gap: 2rem;
     width: 40rem;
     max-width: max-content;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 
     @media (max-width: 650px) {
       flex-direction: column;
@@ -89,17 +90,22 @@ const FormContainer = styled.form`
 
   input,
   textarea {
-    font: 300 17px "Inter", serif;
-    color: ${(props) => props.theme.color};
+    font: 300 17px "Poppins", sans-serif;
+    color: #f5f5f5;
     background-color: ${(props) => props.theme.componentsBackground};
     border-radius: 10px;
     transition: 1s;
     border: none;
     width: 100vw;
-    height: 4rem;
+    height: 3.25rem;
     padding: 0;
     padding-left: 1rem;
-    font-size: 1.25rem;
+    font-size: 1rem;
+
+    &::placeholder {
+      color: #f5f5f5;
+      opacity: 0.75;
+    }
 
     @media (max-width: 650px) {
       width: 70vw;
@@ -118,11 +124,27 @@ const FormContainer = styled.form`
     }
   }
 
-  input[type="submit"] {
-    height: 3rem;
-    width: 8rem;
-    font-size: 1.5rem;
-    padding: 0;
+  button {
+    padding: 0 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    width: fit-content;
+    height: 2.75rem;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.15rem;
+    font-weight: 400;
+    border-radius: 8px;
+    background-color: transparent;
+    border: 1px solid ${(props) => props.theme.color};
+    color: ${(props) => props.theme.color};
+    align-self: flex-end;
     cursor: pointer;
+
+    transition: 1s;
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 `;

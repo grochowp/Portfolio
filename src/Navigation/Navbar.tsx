@@ -65,7 +65,7 @@ const Container = styled.nav`
   color: ${(props) => props.theme.color};
   display: flex;
   width: 100vw;
-  height: 5.6rem;
+  height: 5rem;
   justify-content: space-between;
   align-items: center;
   z-index: 1;

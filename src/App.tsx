@@ -4,7 +4,7 @@ import { ThemeProvider } from "styled-components";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Footer from "./Components/Footer";
 import GlobalStyle from "./styles/globalStyles";
-import { Spinner } from "./pages/Contact/Components/Spinner";
+import { Spinner } from "./Components/Spinner";
 
 const Home = lazy(() => import("./pages/Home/Home"));
 const Projects = lazy(() => import("./pages/Projects/Projects"));

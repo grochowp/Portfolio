@@ -53,30 +53,32 @@ const Section = styled.section`
   color: ${(props) => props.theme.color};
   transition: 1s;
   height: max-content;
-  min-height: 60rem;
-  height: 66vh;
+  min-height: 40rem;
+  height: max-content;
   max-width: 2130px;
   width: 100%;
   margin: auto;
   align-items: center;
+  gap: 2rem;
   display: flex;
   justify-content: center;
 
   article {
-    width: 40%;
+    width: 40rem;
     height: 30rem;
   }
 
   article:first-child {
-    width: 40%;
+    padding-left: 1rem;
+    width: 50rem;
     height: 50%;
-    margin: 0 0 0 5vw;
   }
 
   article:last-child {
     display: flex;
     align-items: center;
-    margin: 3rem 5vw 0 0;
+    margin: 0 1rem 0 0;
+    height: max-content;
   }
 
   @media (max-width: 1200px) {
@@ -87,35 +89,35 @@ const Section = styled.section`
     }
 
     article:first-child {
-      width: 80%;
-      height: 50%;
-
+      width: 90%;
       div {
         margin-top: 2rem;
       }
+    }
+
+    article:last-child {
+      margin-bottom: 2rem;
     }
   }
 `;
 
 const Description = styled.div`
   h1 {
-    color: #8c90f8;
-    font: 100 1.5rem "Koulen", sans-serif;
+    color: #f1460b;
+    font: 400 1.5rem "Roboto", sans-serif;
     margin: 0;
-    transition: 1s;
+    margin-bottom: 0.5rem;
   }
 
   h2 {
-    font: 700 2.25rem "Lalezan", sans-serif;
+    font: 500 2.25rem "Roboto", sans-serif;
     margin: 0;
     width: 90%;
-    transition: 1s;
   }
 
   h3 {
     width: 80%;
-    font: 500 1rem "Inter", sans-serif;
-    transition: 1s;
+    font: 400 1rem "Roboto", sans-serif;
   }
 
   @media (max-width: 500px) {
@@ -142,25 +144,20 @@ const Details = styled.div`
 
   div {
     width: 13rem;
-    height: 6rem;
+    height: 4rem;
 
-    font: 500 1rem "Kreon", serif;
+    font: 500 1rem "Roboto", serif;
   }
 
   div h4 {
     margin-bottom: 0.5rem;
-    transition: 1s;
+    font-weight: 700;
   }
 
   div p {
+    font-weight: 600;
     margin-top: 0.5rem;
-    transition: 1s;
-  }
-
-  @media (max-width: 900px) {
-    div {
-      height: 4rem;
-    }
+    opacity: 0.75;
   }
 
   @media (max-width: 500px) {
