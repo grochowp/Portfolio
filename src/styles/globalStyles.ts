@@ -1,13 +1,17 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
+
+
 body {
   min-width: 320px;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
     transition:1s;
-    background-color: ${(props) => props.theme.componentsBackground}
+
+
+    background-color: ${(props) => props.theme.componentsBackground};
   }
 
   ::-webkit-scrollbar {
@@ -22,9 +26,12 @@ body {
   
   ::-webkit-scrollbar-track {
     margin-top:5.6rem;
+    
+    
+    
     background-color: ${(props) => props.theme.pageBackground};
   }
-  
+
 `;
 
 export default GlobalStyle;

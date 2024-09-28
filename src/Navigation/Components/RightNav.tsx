@@ -13,11 +13,11 @@ interface RightNavProps {
   toggleTheme: () => void;
 }
 
-const RightNav: React.FC<RightNavProps> = (props) => {
+const RightNav: React.FC<RightNavProps> = ({ open, theme, toggleTheme }) => {
   return (
-    <BurgerMenu open={props.open}>
+    <BurgerMenu open={open}>
       <div style={{ marginTop: "2.45rem", marginLeft: "1.5rem" }}>
-        <ChangeThemeIcon toggleTheme={props.toggleTheme} theme={props.theme} />
+        <ChangeThemeIcon toggleTheme={toggleTheme} theme={theme} />
       </div>
       <div
         style={{

@@ -18,13 +18,13 @@ const ProjectText: React.FC<ProjectProps> = (props) => {
   };
 
   return (
-    <Text isExpanded={isExpanded.toString()}>
-      <div>
+    <Text isExpanded={isExpanded}>
+      <div className="details">
         <h2>{props.project.name}</h2>
         <button onClick={handleExpand}>Details</button>
       </div>
       <h4>{props.project.description}</h4>
-      <Media isExpanded={isExpanded.toString()}>
+      <Media isExpanded={isExpanded}>
         <span>
           {SKILLS_KNOW.map(
             (skill) =>
@@ -68,28 +68,26 @@ const ProjectText: React.FC<ProjectProps> = (props) => {
 export default ProjectText;
 
 interface StyledProps {
-  isExpanded: string;
+  isExpanded: boolean;
 }
 
 const Text = styled.div<StyledProps>`
   display: flex;
   flex-direction: column;
 
-  div {
+  .details {
     justify-content: space-between;
     width: 100%;
   }
 
   h2 {
     transition: 1s;
-    font-size: 3rem;
     margin: 1rem 0 0 0;
-    font: 600 2.55rem "Inter", serif;
-    text-align: ;
+    font: 500 2rem "Poppins", sans-serif;
     min-width: 10rem;
 
     @media (max-width: 550px) {
-      font-size: 1.6rem;
+      font-size: 1.4rem;
     }
   }
 
@@ -98,12 +96,12 @@ const Text = styled.div<StyledProps>`
     width: 7rem;
     margin-top: 0.5rem;
     border-radius: 10px;
-    background-color: ${(props) => props.theme.componentsBackground};
+    background-color: transparent;
     color: ${(props) => props.theme.color};
-    border: none;
+    border: 1px solid ${(props) => props.theme.color};
     transition: 1s;
     opacity: 1;
-    font: 600 1.25rem "Inter", serif;
+    font: 600 1rem "Poppins", serif;
 
     @media (min-width: 551px) {
       opacity: 0;
@@ -126,7 +124,7 @@ const Text = styled.div<StyledProps>`
       font-size: 1.15rem;
     }
     @media (max-width: 550px) {
-      display: ${(props) => (props.isExpanded === "true" ? "flex" : "none")};
+      display: ${(props) => (props.isExpanded ? "flex" : "none")};
       min-height: max-content;
       font-size: 1rem;
     }
@@ -135,6 +133,10 @@ const Text = styled.div<StyledProps>`
   @media (max-width: 900px) {
     display: flex;
     text-align: justify;
+  }
+
+  @media (max-width: 550px) {
+    margin-bottom: ${(props) => (props.isExpanded ? 0 : "1rem")};
   }
 `;
 
@@ -146,12 +148,13 @@ const Media = styled.section<StyledProps>`
   justify-content: space-between;
   transition: 1s;
 
+  @media (max-width: 550px) {
+    display: ${(props) => (props.isExpanded ? "flex" : "none")};
+    font-size: 2.5vw;
+  }
+
   span {
     display: flex;
-    @media (max-width: 550px) {
-      display: ${(props) => (props.isExpanded === "true" ? "flex" : "none")};
-      font-size: 3vw;
-    }
 
     a {
       font-size: 2rem;
@@ -171,10 +174,7 @@ const Media = styled.section<StyledProps>`
       width: 2.5rem;
       aspect-ratio: 1/1;
       @media (max-width: 900px) {
-        width: 6vw;
-      }
-      @media (max-width: 550px) {
-        width: 8vw;
+        width: 2rem;
       }
     }
   }

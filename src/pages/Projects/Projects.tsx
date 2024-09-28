@@ -71,21 +71,17 @@ const Projects: React.FC = () => {
           {index % 2 ? (
             <>
               <ProjectText project={project}></ProjectText>
-              <Image>
-                <img
-                  src={`./${project.image.path}`}
-                  alt={`Ikona ${project.name}`}
-                />
-              </Image>
+              <Image
+                src={`./${project.image.path}`}
+                alt={`Ikona ${project.name}`}
+              ></Image>
             </>
           ) : (
             <>
-              <Image>
-                <img
-                  src={`${project.image.path}`}
-                  alt={`Ikona ${project.image.path}`}
-                />
-              </Image>
+              <Image
+                src={`${project.image.path}`}
+                alt={`Ikona ${project.image.path}`}
+              />
               <ProjectText project={project}></ProjectText>
             </>
           )}
@@ -126,6 +122,7 @@ const Container = styled.section`
   height: max-content;
   min-height: calc(100vh - 9rem);
   width: 100vw;
+  overflow-x: hidden;
   max-width: 2130px;
   margin: auto;
   margin-top: 5.6rem;
@@ -191,7 +188,8 @@ const Project = styled.article`
   margin-bottom: 10rem;
   justify-content: center;
 
-  div {
+  div,
+  img {
     display: flex;
     width: 90%;
     max-width: 700px;
@@ -203,7 +201,8 @@ const Project = styled.article`
   }
 
   &.even {
-    div {
+    div,
+    img {
       animation: ${showProjectsRight} 2s ease-in-out;
       @media (max-width: 900px) {
         animation: none;
@@ -223,32 +222,32 @@ const Project = styled.article`
   }
 `;
 
-const Image = styled.div`
+const Image = styled.img`
   display: flex;
   justify-content: center;
   transition: 1s;
-  img {
-    margin-top: 2rem;
-    min-width: 500px;
-    width: 70%;
+
+  margin-top: 2rem;
+  min-width: 500px;
+  width: 70%;
+  height: 80%;
+  min-height: 300px;
+  transition: 1s;
+
+  @media (max-width: 1200px) {
     height: 80%;
-    min-height: 300px;
-    transition: 1s;
-    @media (max-width: 1200px) {
-      height: 80%;
-      min-width: 400px;
-      width: 100%;
-    }
+    min-width: 400px;
+    width: 100%;
+  }
 
-    @media (max-width: 900px) {
-      margin-top: 0rem;
-    }
+  @media (max-width: 900px) {
+    margin-top: 0rem;
+  }
 
-    @media (max-width: 550px) {
-      margin-top: -1rem;
-      min-width: 0;
-      max-width: 100%;
-      min-height: 0;
-    }
+  @media (max-width: 550px) {
+    margin-top: -1rem;
+    min-width: 0;
+    max-width: 100%;
+    min-height: 0;
   }
 `;
