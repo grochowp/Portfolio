@@ -70,11 +70,11 @@ const Projects: React.FC = () => {
         <Project key={project.name} className={index % 2 !== 0 ? "even" : ""}>
           {index % 2 ? (
             <>
-              <ProjectText project={project}></ProjectText>
+              <ProjectText project={project} />
               <Image
                 src={`./${project.image.path}`}
                 alt={`Ikona ${project.name}`}
-              ></Image>
+              />
             </>
           ) : (
             <>
@@ -82,7 +82,7 @@ const Projects: React.FC = () => {
                 src={`${project.image.path}`}
                 alt={`Ikona ${project.image.path}`}
               />
-              <ProjectText project={project}></ProjectText>
+              <ProjectText project={project} />
             </>
           )}
         </Project>
@@ -118,14 +118,14 @@ const showProjectsRight = keyframes`
 `;
 
 const Container = styled.section`
-  margin-top: 5.6rem;
   height: max-content;
   min-height: calc(100vh - 9rem);
   width: 100vw;
   overflow-x: hidden;
   max-width: 2130px;
   margin: auto;
-  margin-top: 5.6rem;
+  margin-top: 5rem;
+
   display: flex;
   align-items: center;
   flex-direction: column;

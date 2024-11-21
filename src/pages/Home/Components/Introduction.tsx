@@ -65,6 +65,7 @@ export default Introduction;
 
 const Section = styled.section`
   background-color: ${(props) => props.theme.pageBackground};
+  min-height: 50rem;
   height: 100vh;
   max-height: 65rem;
   transition: 1s;
@@ -144,7 +145,6 @@ const Intro = styled.div`
   h2 {
     font-size: 2.5rem;
     font-weight: 500;
-    // letter-spacing: 2px;
     strong {
       color: #f1460b;
     }
