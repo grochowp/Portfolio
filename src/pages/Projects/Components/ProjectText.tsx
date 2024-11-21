@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { useState } from "react";
 import { faEarthEurope } from "@fortawesome/free-solid-svg-icons";
 import { Project, SKILLS_KNOW } from "../../../../public/utils";
+import { CiUser } from "react-icons/ci";
 
 interface ProjectProps {
   project: Project;
@@ -20,7 +21,20 @@ const ProjectText: React.FC<ProjectProps> = (props) => {
   return (
     <Text isExpanded={isExpanded}>
       <div className="details">
-        <h2>{props.project.name}</h2>
+        <h2>
+          {props.project.name}{" "}
+          {props.project.collaboration && (
+            <a
+              href={props.project.collaboration.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${props.project.collaboration.name} live link`}
+            >
+              <CiUser />
+              <h3>{props.project.collaboration.name}</h3>
+            </a>
+          )}
+        </h2>
         <button onClick={handleExpand}>Details</button>
       </div>
       <h4>{props.project.description}</h4>
@@ -85,6 +99,25 @@ const Text = styled.div<StyledProps>`
     margin: 1rem 0 0 0;
     font: 500 2rem "Poppins", sans-serif;
     min-width: 10rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      color: ${(props) => props.theme.color};
+
+      h3 {
+        font: 300 1rem "Poppins", sans-serif;
+      }
+      svg {
+        height: 1.5rem;
+        cursor: pointer;
+      }
+    }
 
     @media (max-width: 550px) {
       font-size: 1.4rem;
